@@ -1,5 +1,5 @@
-#FEASIBILITY STUDY#
-##PAUGKAIN: An Augmented Reality application for scanning raw foods using WebAR##
+# FEASIBILITY STUDY #
+## PAUGKAIN: An Augmented Reality application for scanning raw foods using WebAR ##
 
 * Project Description.
     * This project scans various image of raw foods that can be find here in our town, and
