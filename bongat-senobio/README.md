@@ -14,16 +14,16 @@ FurniShop AR is a product viewer that helps the user to view the products offere
 
 ### 1. Creating a Mockup Shopping Website
 
-1. Home Page
-2. Product Page
-3. Product Description page
+• Home Page
+• Product Page
+• Product Description page
 
 ### 2. Implementation of AR Product Viewer using AR.js
 
 ### 3. Finalization
 
-1. tweaks
-2. improvement
+• tweaks
+• improvement
 
 ## Risk Analysis
 
