@@ -4,7 +4,7 @@
 
 >This program is developed or created in order to help students and teachers to inspect the room using just a photo, it can show in the phone what computer it has, its specification, who is assign to that room, and what room it is for.
 
-It also helps lessen the human physically input and faster insight to the room.
+>It also helps lessen the human physically input and faster insight to the room.
 
 **Market Analysis:**
 
