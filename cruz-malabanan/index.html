@@ -1,7 +1,13 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>User Interaction Demo</title>
 <!-- import aframe and then ar.js with image tracking / location based features -->
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
+</head>
+  
 <!-- style for the loader -->
 <style>
   .arjs-loader {
@@ -42,17 +48,29 @@
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
     <a-nft
       type="nft"
-      url="/wayneCruz1.github.io/image-tracking/assets/tRex"
+      url="/wayneCruz1.github.io/image-tracking/assets/char"
       smooth="true"
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
     >
       <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-      <a-entity
-        gltf-model="./trex.gltf"
-        scale="2 2 2"
-        position="0 0 0"
+      //<a-entity
+        //gltf-model="./trex.gltf"
+        //scale="2 2 2"
+        //position="0 0 0"
+      //>
+      //</a-entity>
+    
+    <a-scene renderer="colorManagement: true">
+       <a-assets>
+        <a-asset-item id="character" response-type="arraybuffer" src="./ShrekRumba.glb"></a-asset-item>
+      </a-assets>
+      <a-entity event-listener id="character-model"  
+        gltf-model="#character" 
+        scale="2 2 2" 
+        position = "0 0 -5" 
+        rotation="0 0 0" 
       >
       </a-entity>
     </a-nft>
