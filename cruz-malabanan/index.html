@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>User Interaction Demo</title>
+<title>Wedding Card</title>
 <!-- import aframe and then ar.js with image tracking / location based features -->
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
@@ -56,7 +56,7 @@
     >
       <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
       //<a-entity
-        //gltf-model="./trex.gltf"
+        //gltf-model="./character.glb"
         //scale="2 2 2"
         //position="0 0 0"
       //>
@@ -64,7 +64,7 @@
     
     <a-scene renderer="colorManagement: true">
        <a-assets>
-        <a-asset-item id="character" response-type="arraybuffer" src="./ShrekRumba.glb"></a-asset-item>
+        <a-asset-item id="character" response-type="arraybuffer" src="./cruz-malabanan/character.glb"></a-asset-item>
       </a-assets>
       <a-entity event-listener id="character-model"  
         gltf-model="#character" 
