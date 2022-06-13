@@ -79,7 +79,12 @@
 	</head>
 	<body class="inline">
 		<a-scene webxr="optionalFeatures: hit-test, dom-overlay; overlayElement:#overlay;" physics="debug: false">
-			<a-box id="model" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" scale="0.2 0.2 0.2" hide-in-ar-mode></a-box>
+			<a-assets>
+				<a-asset-item id="placeholder" response-type="arraybuffer" src="./assets/box.glb"></a-asset-item>
+				<a-asset-item id="model1" response-type="arraybuffer" src="./assets/modern-white-chair.glb"></a-asset-item>
+				<a-asset-item id="model2" response-type="arraybuffer" src="./assets/modern-wooden-chair.glb"></a-asset-item>
+				<a-asset-item id="model3" response-type="arraybuffer" src="./assets//office-chair.glb"></a-asset-item>
+			</a-assets>
 			<a-entity ar-hit-test="doHitTest:false" visible="false">
 				<a-plane
 					rotation="-90 0 0"
@@ -89,6 +94,14 @@
 					material="transparent:true;"
 				></a-plane>
 			</a-entity>
+			<a-entity
+				id="model"
+				gltf-model="#placeholder"
+				scale="0.5 0.5 0.5"
+				position="-2 0.5 -5"
+				static-body
+				hide-in-ar-mode
+			></a-entity>
 			<a-sky color="skyblue" hide-in-ar-mode></a-sky>
 			<a-plane
 				rotation="-90 0 0"
@@ -113,8 +126,13 @@
 				<h1>FurniShop AR model viewer</h1>
 				<section class="overlay-content">
 					<p id="instructions">Tap where to place model</p>
+					<p id="model-info">Box placeholder model</p>
+					<p id="instructions2" style="display: block;">Change model by pressing buttons 1-3</p>
 				</section>
 				<div style="display: flex; justify-content: space-between; align-self: stretch;">
+					<button id="button1">1</button>
+					<button id="button2">2</button>
+					<button id="button3">3</button>
 					<button id="exit-button">Stop AR</button>
 				</div>
 			</div>
@@ -129,12 +147,18 @@
 			const reticle = document.querySelector("[ar-hit-test]");
 			const model = document.getElementById('model');
 			const instructions = document.getElementById('instructions');
+			const button1 = document.getElementById('button1');
+			const button2 = document.getElementById('button2');
+			const button3 = document.getElementById('button3');
 			const button = document.getElementById('go-button');
 			const exit = document.getElementById('exit-button');
 			const upVector = new THREE.Vector3(0, 1, 0);
 			const tempVector = new THREE.Vector3();
 			const tempQuaternion = new THREE.Quaternion();
 			const scene = document.querySelector('a-scene');
+			
+			let instructions2 = document.getElementById('instructions2');
+			let modelInfo = document.getElementById("model-info");
 
 			function hasDomOverlay(session) {
 				if (!session.domOverlayState) {
@@ -153,7 +177,7 @@
 			function positionModel() {
 				model.setAttribute("position", reticle.getAttribute("position"));
 				model.setAttribute("visible", true);
-				tempVector.set(0, 0 ,-1);
+				tempVector.set(0, 0 , 0);
 				tempVector.applyQuaternion(reticle.object3D.quaternion);
 				tempQuaternion.setFromUnitVectors(tempVector, upVector);
 				model.object3D.quaternion.multiplyQuaternions(tempQuaternion, reticle.object3D.quaternion);
@@ -163,6 +187,36 @@
 				scene.xrSession.end();
 			});
 
+			button1.addEventListener('click', function() {
+				let assetModel = document.getElementById("model1");
+				let modelPath = assetModel.getAttribute("src");
+				model.setAttribute("gltf-model", modelPath);
+				model.setAttribute("scale", "1 1 1");
+				modelInfo.innerHTML = "Modern White Chair";
+				
+				instructions2.style.display = "none";
+			});
+			
+			button2.addEventListener('click', function() {
+				let assetModel = document.getElementById("model2");
+				let modelPath = assetModel.getAttribute("src");
+				model.setAttribute("gltf-model", modelPath);
+				model.setAttribute("scale", "0.25 0.25 0.25");
+				modelInfo.innerHTML = "Modern Wooden Chair";
+				
+				instructions2.style.display = "none";
+			});
+			
+			button3.addEventListener('click', function() {
+				let assetModel = document.getElementById("model3");
+				let modelPath = assetModel.getAttribute("src");
+				model.setAttribute("gltf-model", modelPath);
+				model.setAttribute("scale", "1 1 1");
+				modelInfo.innerHTML = "Office Chair";
+				
+				instructions2.style.display = "none";
+			});
+			
 			scene.addEventListener("enter-vr", () => {
 				const domOverlay = hasDomOverlay(scene.xrSession);
 				document.getElementById('text').setAttribute('text', 'value', 'Overlay: ' + domOverlay);
@@ -232,7 +286,7 @@
 				}
 			}
 
-			button.addEventListener('mousedown', readyToStartPlace);
-			button.addEventListener('touchstart', readyToStartPlace);
+			//button.addEventListener('mousedown', readyToStartPlace);
+			//button.addEventListener('touchstart', readyToStartPlace);
 		</script>
 	</body>
