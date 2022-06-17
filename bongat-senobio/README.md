@@ -12,13 +12,13 @@ The application will create an easier online purchase experience of furniture pr
 
 FurniShop AR is a product viewer that helps the user to view the products offered by the online shop businesses. The platform will be built together with an interface selling the different furniture, accessories, and home decors online. It has a feature of augmented reality. The augmented reality functionality that the developer will be using in highlighting the feature is WebXR. It will need six (6) weeks accomplished the project starting from the first week of June to the second week of July. The following steps below will be the path for accomplishing the project:
 
-### 1. Development of Augmented Reality System using WebXR, A-Frame, and JS
+### 1. Development of Augmented Reality System using WebXR, A-Frame, and JS (Completed)
 #### (June 8-19, 2022)
 - [x] Add hit testing
 - [x] Casting 3d models in AR environment
-- [ ] 3d model position locking
-- [ ] Gesture feature: Rotation of 3d model along the Y-axis
-- [ ] Capture feature
+- [x] 3d model position locking
+- [x] Rotation of 3d model along the Y-axis
+- [x] Capture feature (canceled webxr doesn't suppport screenshot on ar immersive view due to security measures 
 
 ### 2. Creating a Mockup Shopping Website
 #### (June 20-26, 2022)
