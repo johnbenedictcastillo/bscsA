@@ -2,7 +2,7 @@
 ## PAUGKAIN: An Augmented Reality application for scanning raw foods using WebAR ##
 
 * Project Description.
-    * This project scans various image of raw foods using Image-tracking, and
+    * This project scans various image of raw foods using Marker-based AR, and
       can provide visuals of 2-3 dishes that can be cooked using that kind of food.
 
 * Market Analysis.
