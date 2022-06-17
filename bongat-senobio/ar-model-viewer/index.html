@@ -62,28 +62,28 @@
 				display: contents;
 			}
 
-			body.placing #ar-instructions,
+			body.locked #ar-instructions,
 			body.ar-preparing #ar-instructions {
 				display: contents;
 			}
 
-			body.placing #go-button, 
-			body.placing #instructions {
+			/*body.locked #go-button, 
+			body.locked #instructions {
 				visibility: hidden;
-			}
+			}*/
 
 		</style>
 		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-		<script src="/bongat-senobio/ar-model-viewer/ar-components.js"></script>
+		<script src="ar-components.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
 	</head>
 	<body class="inline">
 		<a-scene webxr="optionalFeatures: hit-test, dom-overlay; overlayElement:#overlay;" physics="debug: false">
 			<a-assets>
-				<a-asset-item id="placeholder" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/box.glb"></a-asset-item>
-				<a-asset-item id="model1" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/modern-white-chair.glb"></a-asset-item>
-				<a-asset-item id="model2" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/modern-wooden-chair.glb"></a-asset-item>
-				<a-asset-item id="model3" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets//office-chair.glb"></a-asset-item>
+				<a-asset-item id="placeholder" response-type="arraybuffer" src="./assets/box.glb"></a-asset-item>
+				<a-asset-item id="model1" response-type="arraybuffer" src="./assets/modern-white-chair.glb"></a-asset-item>
+				<a-asset-item id="model2" response-type="arraybuffer" src="./assets/modern-wooden-chair.glb"></a-asset-item>
+				<a-asset-item id="model3" response-type="arraybuffer" src="./assets//office-chair.glb"></a-asset-item>
 			</a-assets>
 			<a-entity ar-hit-test="doHitTest:false" visible="false">
 				<a-plane
@@ -99,7 +99,6 @@
 				gltf-model="#placeholder"
 				scale="0.5 0.5 0.5"
 				position="-2 0.5 -5"
-				static-body
 				hide-in-ar-mode
 			></a-entity>
 			<a-sky color="skyblue" hide-in-ar-mode></a-sky>
@@ -133,6 +132,10 @@
 					<button id="button1">1</button>
 					<button id="button2">2</button>
 					<button id="button3">3</button>
+					<button id="lock-button">Lock</button>
+					<button id="unlock-button" style="display: none">Unlock</button>
+					<button id="left-button" style="display: none">L</button>
+					<button id="right-button" style="display: none">R</button>
 					<button id="exit-button">Stop AR</button>
 				</div>
 			</div>
@@ -150,7 +153,10 @@
 			const button1 = document.getElementById('button1');
 			const button2 = document.getElementById('button2');
 			const button3 = document.getElementById('button3');
-			const button = document.getElementById('go-button');
+			const lockbtn = document.getElementById('lock-button');
+			const unlockbtn = document.getElementById('unlock-button');
+			const leftbtn = document.getElementById('left-button');
+			const rightbtn = document.getElementById('right-button');
 			const exit = document.getElementById('exit-button');
 			const upVector = new THREE.Vector3(0, 1, 0);
 			const tempVector = new THREE.Vector3();
@@ -226,7 +232,7 @@
 					reticle.setAttribute('ar-hit-test', 'doHitTest:true');
 					reticle.setAttribute('visible', 'true');
 				} else {
-					document.body.classList.add("placing");
+					document.body.classList.add("locked");
 					reticle.setAttribute('ar-hit-test', 'doHitTest:false');
 					reticle.setAttribute('visible', 'false');
 				}
@@ -234,7 +240,7 @@
 
 			scene.addEventListener("exit-vr", () => {
 				document.body.classList.add("inline");
-				document.body.classList.remove("placing");
+				document.body.classList.remove("locked");
 				document.body.classList.remove("ar-preparing");
 				reticle.setAttribute('ar-hit-test', 'doHitTest:false');
 				reticle.setAttribute('visible', 'false');
@@ -242,7 +248,7 @@
 
 			reticle.addEventListener('select', function (e) {
 				const domOverlay = hasDomOverlay(scene.xrSession);
-				if (document.body.classList.contains("placing")) {
+				/*if (document.body.classList.contains("locked")) {
 					const pose = e.detail.pose;
 					ball.body.position.copy(pose.transform.position);
 					// ball.body.position.y += 0.2;
@@ -250,43 +256,99 @@
 					tempVector.applyQuaternion(pose.transform.orientation);
 					ball.body.velocity.copy(tempVector);
 					return;
-				}
+				}*/
 
 				if (domOverlay) {
 					setTimeout(() => {
-						if (document.body.classList.contains("placing")) {
+						if (document.body.classList.contains("locked")) {
 							return;
 						} else {
 							positionModel();
 						}
 					}, 50);
 				} else {
-					if (document.body.classList.contains("placing")) {
+					if (document.body.classList.contains("locked")) {
 						return;
 					} else {
 						if (this.components["ar-hit-test"].hasFoundAPose) {
 							positionModel();
-							readyToStartPlace(e);
+							lockInPlace(e);
 						}
 					}
 				}
 			});
 
-			function readyToStartPlace(e) {
+			function lockInPlace(e) {
 				e.preventDefault();
 				if (model.getAttribute("visible") === false) {
 					positionModel();
 				}
 				if (document.body.classList.contains("ar-preparing")) {
 					document.body.classList.remove("ar-preparing");
-					document.body.classList.add("placing");
+					document.body.classList.add("locked");
 					reticle.setAttribute('ar-hit-test', 'doHitTest:false');
 					reticle.setAttribute('visible', 'false');
+					
+					button1.style.display = "none";
+					button2.style.display = "none";
+					button3.style.display = "none";
+					lockbtn.style.display = "none";
+					unlockbtn.style.display = "flex";
+					leftbtn.style.display = "flex";
+					rightbtn.style.display = "flex";
+					
+					instructions.innerHTML = "User L-R buttons to rotate model";
+					
 					return;
 				}
 			}
+			
+			function unlockModel(e){
+				e.preventDefault();
+				if (document.body.classList.contains("locked")) {
+					document.body.classList.remove("locked");
+					document.body.classList.add("ar-preparing");
+					reticle.setAttribute('ar-hit-test', 'doHitTest:true');
+					reticle.setAttribute('visible', 'true');
+					
+					button1.style.display = "flex";
+					button2.style.display = "flex";
+					button3.style.display = "flex";
+					lockbtn.style.display = "flex";
+					unlockbtn.style.display = "none";
+					leftbtn.style.display = "none";
+					rightbtn.style.display = "none";
+					
+					instructions.innerHTML = "Tap where to place model";
+					return;
+				}
+			}
+			
+			function rotateLeft(e){
+				e.preventDefault();
+				model.object3D.rotation.y -= THREE.Math.degToRad(5);
 
-			//button.addEventListener('mousedown', readyToStartPlace);
-			//button.addEventListener('touchstart', readyToStartPlace);
+				return;
+			}
+
+			function rotateRight(e){
+				e.preventDefault();
+				model.object3D.rotation.y += THREE.Math.degToRad(5);
+
+				return;
+			}
+			lockbtn.addEventListener('mousedown', lockInPlace);
+			lockbtn.addEventListener('touchstart', lockInPlace);
+			
+			unlockbtn.addEventListener('mousedown', unlockModel);
+			unlockbtn.addEventListener('touchstart', unlockModel);
+			
+			leftbtn.addEventListener('mousedown', rotateLeft);
+			leftbtn.addEventListener('touchstart', rotateLeft);
+			rightbtn.addEventListener('mousedown', rotateRight);
+			rightbtn.addEventListener('touchstart', rotateRight);
+			
+			
+			
 		</script>
 	</body>
