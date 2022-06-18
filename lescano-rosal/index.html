@@ -13,19 +13,26 @@
         <a-scene renderer="colorManagement: true">
      <a-assets>
               <a-asset-item 
-		            id="void" 
-		            response-type="arraybuffer" 
-	            	src="./void.glb"
+		   id="void" 
+		   response-type="arraybuffer" 
+	           src="./void.glb"
 	              ></a-asset-item>
           
-       <audio id="howl" src="./assets/matrix.wav"></audio>
+      <audio id="howl" src="./assets/matrix.mp3"></audio>
       </a-assets>
           
           <a-entity
           void-event 
-	      id="void-model"  
-        gltf-model="#void
-        scale="2 2 2" 
-        position = "0 0 -5" 
-        </a-entity>
+	  id="void-model"  
+          gltf-model="#void
+          scale="2 2 2" 
+          position = "0 0 -5" 
+        ></a-entity>
+	<a-sound src="#matrix" autoplay="true" loop="true" volume="0.25"></a-sound>
+      <a-entity cursor="rayOrigin:mouse"></a-entity>
+      <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
+    </a-scene>
+  </body>
+</html>
+			     
           
