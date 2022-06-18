@@ -4,7 +4,7 @@ An Augmented Reality application for interaction with inanimate objects.
 
 ## Project Description
 
-Inanimate objects are boring but we can make it fun. This project may cure your boredom as showing some funny filters, interactive avatars and games using marker-based augmented reality. A simple fun interaction may change the user’s mood.
+Inanimate objects are boring but we can make it fun. This project may cure your boredom as showing some funny filters, interactive avatars and games using augmented reality system. A simple fun interaction may change the user’s mood.
 
 ## Market Analysis
 
