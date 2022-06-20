@@ -8,13 +8,25 @@
     <a-scene embedded arjs>
       <a-assets>
         <img id="sunnyside" src="./assets/sunnysideup.jpg" />
+        <img id="omellette" src="./assets/omellette.jpeg" />
+        <img id="eggtoast" src="./assets/eggtoasts.jpg" />
       </a-assets>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
               <a-image
-                   id="img"
                    src="#sunnyside"
                    position="-1 0 -1"
                    rotation="1 0 0"
+                   scale="1 1 1"
+                ></a-image>
+              
+              <a-image
+                   src="#omellette"
+                   position="0 0 -1" 
+                   scale="1 1 1"
+                ></a-image>
+            <a-image
+                   src="#eggtoast"
+                   position="1 0 -1" 
                    scale="1 1 1"
                 ></a-image>
       </a-marker>
