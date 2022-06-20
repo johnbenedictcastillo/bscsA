@@ -6,7 +6,7 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     
-    <script>
+<!--     <script>
       init: function ()
       {
         let sunnyside = document.querySelector(#sunnyside)
@@ -17,7 +17,7 @@
                     sunnyrecipe = setAttribute('visible', true);
              }
       }
-    </script>
+    </script> -->
     <a-scene embedded arjs>
       <a-assets>
         <img id="sunnyside" src="./assets/sunnysideup.jpg" />
@@ -44,6 +44,19 @@
         
       </a-assets>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
+	<script>
+      init: function ()
+      {
+        let sunnyside = document.querySelector(#sunnyside)
+          this.el.addEventListener('touchstart', function (e))
+             {
+                let sunnyside = document.querySelector(#sunnyside)       
+                let sunnyrecipe = document.querySelector('#sunnyrecipe')
+                    sunnyrecipe = setAttribute('visible', true);
+             }
+      }
+    	</script>
+	      
               <a-image
                    src="#sunnyside"
                    position="-1 0 -1"
@@ -61,6 +74,7 @@
                    position="1 0 -1" 
                    scale="1 1 1"
                 ></a-image>
+	      
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
