@@ -3,3 +3,29 @@ const API_KEY =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsI
 
 const connection = supabase.createClient(PROJECT_URL, API_KEY)
 
+async function createUser(){
+
+    const {data, error} = await connection.from("users").
+    insert({
+        username: "jbcastillo",
+        first_name: "John Benedict",
+        last_name: "Castillo",
+        password : "password123"
+    });
+
+    if (data){
+        console.log(data)
+    }
+    if (error){
+        console.log(error)
+    }
+}
+
+$(document).ready(function(){
+
+    $("#test-btn").click(function(){
+        createUser();
+    })
+
+
+});
