@@ -73,6 +73,7 @@
 			}*/
 
 		</style>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 		<script src="/bongat-senobio/ar-model-viewer/ar-components.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -348,5 +349,36 @@
 			rightbtn.addEventListener('mousedown', rotateRight);
 			rightbtn.addEventListener('touchstart', rotateRight);
 					
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+		<script>
+			const PROJECT_URL = "https://gteucwlnigyjwjajmzwm.supabase.co"
+			const API_KEY =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd0ZXVjd2xuaWd5andqYWptendtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTU3Nzg5MjEsImV4cCI6MTk3MTM1NDkyMX0.6zvlshKZCEQG5C9ztOsdsg_2n_K-20tsDXkFZadUcAY"
+
+			const connection = supabase.createClient(PROJECT_URL, API_KEY)
+
+			async function savedModel(modeInfo){
+
+				const {data, error} = await connection.from("models").
+				insert({
+					modeil_info: modeInfo,
+				});
+
+				if (data){
+					console.log(data)
+				}
+				if (error){
+					console.log(error)
+				}
+			}
+
+			$(document).ready(function(){
+
+				$("#exit-button").click(function(){
+					let modelInfo = $('#model-info').text();
+					savedModel(modelInfo);
+				})
+
+			});
 		</script>
 	</body>
