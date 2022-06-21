@@ -15,10 +15,32 @@ async function createUser(userName, fName, lName, password){
 
     if (data){
         console.log(data)
+        getUsers()
     }
     if (error){
         console.log(error)
     }
+}
+async function getUsers(){
+    let tbody = $("#tbody");
+    let tr = "";
+
+    const res = await connection.from("users").select("*");
+    if (res){
+        for (var i in res.data){
+            tr +=`<tr>
+            <td>${resr.data[i].id}</td>
+            <td>${resr.data[i].user_name}</td>
+            <td>${resr.data[i].first_name}</td>
+            <td>${resr.data[i].last_name}</td>
+            <td>${resr.data[i].password}</td>
+            </tr>`
+        }
+        tbody.html(tr)
+    }
+    
+
+
 }
 
 $(document).ready(function(){
@@ -30,6 +52,8 @@ $(document).ready(function(){
         let password= $("#password").val()
         createUser(userName,fName,lName,password);
     })
-
+    $("#getusers-btn").click(function(){
+        getUsers();
+    })
 
 });

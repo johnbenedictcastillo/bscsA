@@ -14,7 +14,22 @@
         <label>Password</label>
         <input id="password" type="text"><br>
     </form>
-    <button id="test-btn">Click Me</button>
+    <button id="test-btn">Save Users</button>
+    <button id="getusers-btn">Get Users</button>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="/castillo/scripts/script.js"></script>
