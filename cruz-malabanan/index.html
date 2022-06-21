@@ -11,6 +11,58 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
+     <script>
+    window.onload = function() {
+        AFRAME.registerComponent('event-listener', {
+            init: function () {
+                this.audio = document.querySelector("#song");
+
+                this.el.addEventListener('click', function (e) {
+		
+                    let cake = document.querySelector('#cake-model')
+		    cake.setAttribute('animation-mixer', "clip: BeanCake|360_NoScop_Rat; loop: once;");
+                    this.audio.play();
+			
+                  console.log(e)
+                }.bind(this));
+		
+                this.el.addEventListener('mouseenter', function (e) {
+                    console.log(e)
+                }.bind(this));
+		    
+		 this.el.addEventListener('mouseleave', function (e) {
+			 console.log(e)
+                }.bind(this));
+		 
+		
+                this.el.addEventListener('touchmove', function (e) {
+                    //this.audio.play();
+			
+                  console.log(e)
+                }.bind(this));
+                this.el.addEventListener('touchstart', function (e) {
+		
+                    let cake = document.querySelector('#cake-model')
+		    cake.setAttribute('animation-mixer', "clip: BeanCake|360_NoScop_Rat; loop: once;");
+                    this.audio.play();
+			console.log(e)
+                }.bind(this));
+		    
+		 this.el.addEventListener('touchend', function (e) {
+			 console.log(e)
+                }.bind(this));
+		    
+		
+                this.el.addEventListener('animation-finished', function (e) {
+			 console.log(e)
+                    let cake = document.querySelector('#cake-model')
+		    cake.removeAttribute('animation-mixer');
+                }.bind(this));
+		
+            }
+        });
+    };
+</script>
   </head>
 
   <body>
@@ -40,8 +92,6 @@
           radius="1.25"
           rotation="10 43 45"
           color="#e3c099"
-          class="clickable"
-          gesture-handler
         >
         </a-box>
 
@@ -50,9 +100,28 @@
           gltf-model="#couple"
           position="0 0 0"
           scale="0.005 0.005 0.005"
-          rotation="00 0 0"
+          rotation="0 0 0"
+          class="clickable"
+          gesture-handler
         >
         </a-entity>
+        
+        <a-assets>
+        <a-asset-item id="dragon" response-type="arraybuffer" src="./stylizedcakes.glb"></a-asset-item>
+        <audio id="song" src="./assets/Drum.wav"></audio>
+        </a-assets>
+        
+        <a-entity event-listener id="cake-model"  
+          gltf-model="#cake" 
+          scale="1 1 1" 
+          position = "0 0 0.5" 
+          rotation="0 0 0" 
+        >
+          
+        </a-entity>
+        <a-sound src="#songr" autoplay="false"></a-sound>
+        <a-entity cursor="rayOrigin:mouse"></a-entity>
+        <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
       </a-marker>
       
       <a-entity camera></a-entity>
