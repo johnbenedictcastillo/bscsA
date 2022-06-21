@@ -12,56 +12,6 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
-     <script>
-        AFRAME.registerComponent('event-listener', {
-            init: function () {
-                this.audio = document.querySelector("#song");
-
-                this.el.addEventListener('click', function (e) {
-		
-                    let cake = document.querySelector('#cake-model')
-		    cake.setAttribute('animation-mixer', "clip: BeanCake|360_NoScop_Rat; loop: once;");
-                    this.audio.play();
-			
-                  console.log(e)
-                }.bind(this));
-		
-                this.el.addEventListener('mouseenter', function (e) {
-                    console.log(e)
-                }.bind(this));
-		    
-		 this.el.addEventListener('mouseleave', function (e) {
-			 console.log(e)
-                }.bind(this));
-		 
-		
-                this.el.addEventListener('touchmove', function (e) {
-                    //this.audio.play();
-			
-                  console.log(e)
-                }.bind(this));
-                this.el.addEventListener('touchstart', function (e) {
-		
-                    let cake = document.querySelector('#cake-model')
-		    cake.setAttribute('animation-mixer', "clip: BeanCake|360_NoScop_Rat; loop: once;");
-                    this.audio.play();
-			console.log(e)
-                }.bind(this));
-		    
-		 this.el.addEventListener('touchend', function (e) {
-			 console.log(e)
-                }.bind(this));
-		    
-		
-                this.el.addEventListener('animation-finished', function (e) {
-			 console.log(e)
-                    let cake = document.querySelector('#cake-model')
-		    cake.removeAttribute('animation-mixer');
-                }.bind(this));
-		
-            }
-        });
-</script>
   </head>
 
   <body>
