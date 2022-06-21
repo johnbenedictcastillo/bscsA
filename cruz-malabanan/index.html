@@ -22,7 +22,9 @@
       gesture-detector
       id="scene"
     >
-      <audio id="song" src="./assets/Canon Rock.mp3"></audio>
+      <audio id="song" preload="auto">
+	<source src="./assets/Canon Rock.mp3">    
+	</audio>
 	    
       <a-assets>
         <a-asset-item
@@ -80,6 +82,7 @@
           gesture-handler
         >
         </a-entity>
+	<a-sound src=#song play="true"> </a-sound>
       </a-marker>
       
       <a-entity camera></a-entity>
