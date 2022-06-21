@@ -7,7 +7,7 @@ async function createUser(){
 
     const {data, error} = await connection.from("users").
     insert({
-        username: "jbcastillo",
+        user_name: "jbcastillo",
         first_name: "John Benedict",
         last_name: "Castillo",
         password : "password123"
