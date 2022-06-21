@@ -22,6 +22,8 @@
       gesture-detector
       id="scene"
     >
+      <audio id="song" src="./assets/Cannon Rock.mp3"></audio>
+	    
       <a-assets>
         <a-asset-item
           id="couple"
@@ -78,7 +80,8 @@
           gesture-handler
         >
         </a-entity>
-	      
+	
+	<a-sound src="#roar" autoplay="true"></a-sound>
       </a-marker>
       
       <a-entity camera></a-entity>
