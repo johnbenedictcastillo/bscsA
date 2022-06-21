@@ -105,23 +105,6 @@
           gesture-handler
         >
         </a-entity>
-        
-        <a-assets>
-        <a-asset-item id="cake" response-type="arraybuffer" src="./stylizedcakes.glb"></a-asset-item>
-        <audio id="song" src="./assets/Drum.wav"></audio>
-        </a-assets>
-        
-        <a-entity event-listener id="cake-model"  
-          gltf-model="#cake" 
-          scale="1 1 1" 
-          position = "0 0 0.5" 
-          rotation="0 0 0" 
-        >
-          
-        </a-entity>
-        <a-sound src="#song" autoplay="false"></a-sound>
-        <a-entity cursor="rayOrigin:mouse"></a-entity>
-        <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
       </a-marker>
       
       <a-entity camera></a-entity>
