@@ -29,11 +29,11 @@ async function getUsers(){
     if (res){
         for (var i in res.data){
             tr +=`<tr>
-            <td>${resr.data[i].id}</td>
-            <td>${resr.data[i].user_name}</td>
-            <td>${resr.data[i].first_name}</td>
-            <td>${resr.data[i].last_name}</td>
-            <td>${resr.data[i].password}</td>
+            <td>${res.data[i].id}</td>
+            <td>${res.data[i].user_name}</td>
+            <td>${res.data[i].first_name}</td>
+            <td>${res.data[i].last_name}</td>
+            <td>${res.data[i].password}</td>
             </tr>`
         }
         tbody.html(tr)
