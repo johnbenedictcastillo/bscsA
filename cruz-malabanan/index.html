@@ -25,31 +25,43 @@
       <a-assets>
         <a-asset-item
           id="couple"
-          src="https://johnbenedictcastillo.github.io/bscsA/cruz-malabanan/couple1.glb"
+          src="./couple1.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+	
+      <a-assets>
+        <a-asset-item
+          id="house"
+          src="./candy_house.glb"
         >
         </a-asset-item>
       </a-assets>
         
       <a-assets>
-        <a-asset-item id="cake" response-type="arraybuffer" src="./cakes.glb"></a-asset-item>
+        <a-asset-item 
+	  id="cake" 
+	  response-type="arraybuffer" 
+	  src="./cakes.glb"
+	  >
+	  </a-asset-item>
         </a-assets>
       
       <a-marker
         type="pattern"
         url="https://johnbenedictcastillo.github.io/bscsA/cruz-malabanan/marker/pattern-couple.patt"
       >
-        <a-box
-          position="0.5 0 -0.5"
-          scale="0.5 0.5 0.5"
-          radius="1.25"
-          rotation="10 43 45"
-          color="#e3c099"
+	<a-entity
+          gltf-model="#house" 
+          scale="0.1 0.1 0.1" 
+          position = "0 -.5 0" 
+          rotation="0 0 0"
         >
-        </a-box>
+        </a-entity>
 
 	<a-entity
           gltf-model="#cake" 
-          scale="0.005 0.005 0.005" 
+          scale="0.01 0.01 0.01" 
           position = "0 0 0.7" 
           rotation="0 0 0"
 	  animation-mixer = "clip: Take 001"
