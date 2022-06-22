@@ -11,10 +11,11 @@
 	AFRAME.registerComponent("sunnyside-event", {
 	      init: function () {
 		//let sunnyside = document.querySelector('#sunnyside')
-		  this.el.addEventListener('touchstart', function (e))
-		     { console.log(e)
+		  this.el.addEventListener('touchstart', function (e)
+		     { 
 			let sunnyrecipe = document.querySelector('#sunnyrecipe')
-			    sunnyrecipe = setAttribute('visible', true);
+			    sunnyrecipe.setAttribute('visible', true);
+			  console.log(e)
 		     }.bind(this));
 		   }
 	     });
