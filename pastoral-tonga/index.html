@@ -7,11 +7,9 @@
   <body style="margin : 0px; overflow: hidden;">
     
     <script>
-//first try para palabasin yung text pag clinick yung image/
-AFRAME.registerComponent("sunnyside", 
-	{
-      init: function ()
-      {
+window.onload = function() {	    
+AFRAME.registerComponent("sunnyside", {
+      init: function () {
         let sunnyside = document.querySelector(#sunnyside)
           this.el.addEventListener('touchstart', function (e))
              {
@@ -19,9 +17,9 @@ AFRAME.registerComponent("sunnyside",
                 let sunnyrecipe = document.querySelector('#sunnyrecipe')
                     sunnyrecipe = setAttribute('visible', true);
              }.bind(this));
-      }
-	});
-
+      	   }
+     });
+}
     </script>
     <a-scene embedded arjs>
       <a-assets>
@@ -49,15 +47,6 @@ AFRAME.registerComponent("sunnyside",
         
       </a-assets>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
-<!-- 	<script>
-	document.getElementById("sunnyside").addEventListener("touchstart", myFunction);
-		function myFunction() //2nd try, tinesting ko kung gagana pag nasa loob ng <a-marker, kaso hindi rin
-			{ 
-			let sunnyrecipe = document.querySelector('#sunnyrecipe') 
-                    	sunnyrecipe.setAttribute('visible', true);
-		        }
-    	</script> -->
-	      
               <a-image
                    src="#sunnyside"
                    position="-1 0 -1"
