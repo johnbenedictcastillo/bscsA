@@ -17,6 +17,14 @@
 			    sunnyrecipe.setAttribute('visible', true);
 			  console.log(e)
 		     }.bind(this));
+		      
+		  		//let sunnyside = document.querySelector('#sunnyside')
+		  this.el.addEventListener('click', function (e)
+		     { 
+			let sunnyrecipe = document.querySelector('#sunnyrecipe')
+			    sunnyrecipe.setAttribute('visible', true);
+			  console.log(e)
+		     }.bind(this));
 		   }
 	     });
      };
@@ -50,18 +58,18 @@
                    src="#sunnyside"
                    position="-1 0 -1"
                    rotation="1 0 0"
-                   scale="1 1 1"
+                   scale="0.5 0.5 0.5"
                 ></a-image>
               
               <a-image sunnyside-event
                    src="#omellette"
                    position="0 0 -1"
-                   scale="1 1 1"
+                   scale="0.5 0.5 0.5"
                 ></a-image>
             <a-image sunnyside-event
                    src="#eggtoast"
                    position="1 0 -1" 
-                   scale="1 1 1"
+                   scale="0.5 0.5 0.5"
                 ></a-image>
 	     <a-text
             id="sunnyrecipe"
