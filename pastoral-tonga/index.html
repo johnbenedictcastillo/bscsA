@@ -45,23 +45,11 @@
       </a-assets>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
 	<script>
-	document.getElementById("sunnyside").addEventListener("touchstart", myfunction);
-//       init: function ()
-//       {
-// // 	      if (document.getElementById("sunnyside").ontouchstart === "sunnyside"){
-		      function myfunction(){
-// 			      let sunnyrecipe = document.querySelector('#sunnyrecipe')
-                    		sunnyrecipe.setAttribute('visible', true);
-		      }
-// // 	      }
-// //         let sunnyside = document.querySelector(#sunnyside)
-// //           this.el.addEventListener('touchstart', function (e))
-// //              {
-// //                 let sunnyside = document.querySelector(#sunnyside)       
-// //                 let sunnyrecipe = document.querySelector('#sunnyrecipe')
-// //                     sunnyrecipe.setAttribute('visible', true);
-// //              }
-//       }
+	document.getElementById("sunnyside").addEventListener("touchstart", myFunction);
+		function myFunction()
+			{
+                    	sunnyrecipe.setAttribute('visible', true);
+		        }
     	</script>
 	      
               <a-image
