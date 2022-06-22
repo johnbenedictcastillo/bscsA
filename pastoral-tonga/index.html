@@ -10,6 +10,8 @@
      window.onload = function () {
 	AFRAME.registerComponent("sunnyside-event", {
 	      init: function () {
+		      
+			  console.log("init")
 		//let sunnyside = document.querySelector('#sunnyside')
 		  this.el.addEventListener('touchstart', function (e)
 		     { 
@@ -91,6 +93,7 @@
             geometry="primitive: plane; width: 2.50" 
 	          material="color: #FFB6C1"
         ></a-text> -->
+	    <a-entity sunnyside-event></a-entity>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
 <!--               <a-image sunnyside-event
                    src="#sunnyside"
