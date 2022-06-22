@@ -27,54 +27,43 @@
     </head>
 
     <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false"
-            loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
+        <a-scene 
+          id="scene" 
+          embedded arjs 
+          vr-mode-ui="enabled: false"
+          renderer="antialias: true; 
+          logarithmicDepthBuffer: true; 
+          colorManagement: true; sortObjects: true;">
             <a-assets>
                 <video
                     id="vid"
-                    src="assets/asset.mp4"
+                    src="./assets/asset.mp4"
                     preload="auto"
                     response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
                     autoplay
-                    muted
-                    playsinline
+                    unmuted
                 ></video>
             </a-assets>
 
             <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                videohandler
+                url="./assets/marker.patt"
                 smooth="true"
-                smoothCount="10"
-                smoothTolerance="0.01"
-                smoothThreshold="5"
+                videohandler
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                id="marker1"
             >
                 <a-video
-                    src="vid"
-                    scale="1 1 1"
-                    position="0 0.1 0"
-                    rotation="-90 0 0"
+                    src="#vid"
                     class="clickable"
                     gesture-handler
                 ></a-video>
             </a-marker>
 
             <a-entity camera></a-entity>
+            <a-entity cursor="rayOrigin:mouse"></a-entity>
+            <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
         </a-scene>
     </body>
 </html>
