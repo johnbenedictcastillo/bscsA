@@ -6,7 +6,7 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     
-    <script>	   
+<!--     <script>	   
      window.onload = function () {
 	AFRAME.registerComponent("sunnyside-event", {
 	      init: function () {
@@ -20,14 +20,14 @@
 		   }
 	     });
      };
-    </script>
+    </script> -->
     <a-scene embedded arjs>
       <a-assets>
         <img id="sunnyside" src="./assets/sunnysideup.jpg" />
         <img id="omellette" src="./assets/omellette.jpeg" />
         <img id="eggtoast" src="./assets/eggtoasts.jpg" />
       </a-assets>
-      <a-text
+<!--       <a-text
             id="sunnyrecipe"
             value="Heat oil in an 8-inch nonstick skillet over medium-low. 
                    Gently crack eggs into pan. 
@@ -45,7 +45,7 @@
             visible="true"
             geometry="primitive: plane; width: 2.50" 
 	          material="color: #FFB6C1"
-        ></a-text>
+        ></a-text> -->
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
               <a-image sunnyside-event
                    src="#sunnyside"
@@ -64,13 +64,25 @@
                    position="1 0 -1" 
                    scale="1 1 1"
                 ></a-image>
-	     <a-entity
-		       src = "sunnyrecipe"
-		       position = "0 0 0"
-		       visible= "true"
-		       >
-		      
-		     </a-entity>
+	      <a-text
+            id="sunnyrecipe"
+            value="Heat oil in an 8-inch nonstick skillet over medium-low. 
+                   Gently crack eggs into pan. 
+                   You shouldn't hear a hiss, and the eggs should lie flat and still. 
+                   If you hear sizzling or the whites flutter or bubble at all, turn down the heat. 
+                   Cook 3 minutes or until the whites are mostly set, with some still-runny whites near the yolks.
+                   Tilt pan toward you so oil pools on the bottom edge; dip a spoon in the oil, 
+                   and gently baste the uncooked patches of white until they're set. 
+                   Be careful not to baste the yolks, or they'll cloud over like cataracts. 
+                   Sprinkle with pepper and salt. Remove eggs from pan, leaving excess oil behind."
+            position="0 0 0 "
+	    scale = "1 1 1"
+            align="center"
+            color="white"
+            visible="true"
+            geometry="primitive: plane; width: 2.50" 
+	          material="color: #FFB6C1"
+        ></a-text>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
