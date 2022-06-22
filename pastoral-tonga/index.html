@@ -6,8 +6,10 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     
-<!--     <script>
+    <script>
 //first try para palabasin yung text pag clinick yung image//
+AFRAME.registerComponent('event-listener', 
+	{
       init: function ()
       {
         let sunnyside = document.querySelector(#sunnyside)
@@ -18,7 +20,8 @@
                     sunnyrecipe = setAttribute('visible', true);
              }
       }
-    </script> -->
+	}
+    </script>
     <a-scene embedded arjs>
       <a-assets>
         <img id="sunnyside" src="./assets/sunnysideup.jpg" />
@@ -45,14 +48,14 @@
         
       </a-assets>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
-	<script>
+<!-- 	<script>
 	document.getElementById("sunnyside").addEventListener("touchstart", myFunction);
 		function myFunction() //2nd try, tinesting ko kung gagana pag nasa loob ng <a-marker, kaso hindi rin
 			{ 
 			let sunnyrecipe = document.querySelector('#sunnyrecipe') 
                     	sunnyrecipe.setAttribute('visible', true);
 		        }
-    	</script>
+    	</script> -->
 	      
               <a-image
                    src="#sunnyside"
