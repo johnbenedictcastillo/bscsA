@@ -8,13 +8,14 @@
    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 	 <script>
      window.onload = function () {
-	AFRAME.registerComponent("sunnyside-event", {
+	     console.log('register')
+	AFRAME.registerComponent('sunnyside-event', {
 	      init: function () {
-		      console.log("init")
+		      console.log('init')
 		//let sunnyside = document.querySelector('#sunnyside')
 		  this.el.addEventListener('touchstart', function (e)
 		     { 
-			  console.log("touched")
+			  console.log('touched')
 			let sunnyrecipe = document.querySelector('#sunnyrecipe')
 			    sunnyrecipe.setAttribute('visible', true);
 			  console.log(e)
@@ -23,7 +24,7 @@
 	     		//let sunnyside = document.querySelector('#sunnyside')
 		  this.el.addEventListener('click', function (e)
 		     { 
-			  console.log("clicked")
+			  console.log('clicked')
 			let sunnyrecipe = document.querySelector('#sunnyrecipe')
 			    sunnyrecipe.setAttribute('visible', true);
 			  console.log(e)
