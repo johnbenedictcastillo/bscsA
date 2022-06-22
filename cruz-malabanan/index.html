@@ -53,11 +53,11 @@
         type="pattern"
         url="https://johnbenedictcastillo.github.io/bscsA/cruz-malabanan/marker/pattern-couple.patt"
       >
+      <a-entity id="entity" look-at="[camera]">
 	<a-entity
           gltf-model="#house" 
           scale="0.001 0.001 0.001" 
           position = "0 0 0" 
-          rotation="0 -90 0"
         >
         </a-entity>
 
@@ -65,7 +65,6 @@
           gltf-model="#cake" 
           scale="0.015 0.015 0.015" 
           position = "-0.4 0 0.7" 
-          rotation="0 0 0"
 	  animation-mixer = "clip: Take 001"
         >
         </a-entity>
@@ -75,12 +74,12 @@
           gltf-model="#couple"
           position="0 0 1.2"
           scale="0.005 0.005 0.005"
-          rotation="0 0 0"
           class="clickable"
           gesture-handler
         >
         </a-entity>
 	<a-sound src=#song autoplay="true"> </a-sound>
+	</a=entiy>
       </a-marker>
       
       <a-entity camera></a-entity>
