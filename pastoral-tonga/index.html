@@ -8,7 +8,7 @@
     
     <script>	   
      window.onload = function () {
-	AFRAME.registerComponent("sunnyside", {
+	AFRAME.registerComponent('sunnyside-event', {
 	      init: function () {
 		let sunnyside = document.querySelector(#sunnyside)
 		  this.el.addEventListener('touchstart', function (e))
@@ -47,7 +47,7 @@
         
       </a-assets>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
-              <a-image
+              <a-image sunnyside-event
                    src="#sunnyside"
                    position="-1 0 -1"
                    rotation="1 0 0"
