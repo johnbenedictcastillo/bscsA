@@ -53,8 +53,9 @@
         type="pattern"
         url="https://johnbenedictcastillo.github.io/bscsA/cruz-malabanan/marker/pattern-couple.patt"
       >
-      <a-entity id="camera" wasd-controls camera look-controls position="0 1.5 0"
-	<a-entity
+	      
+      <a-entity id="entity" look-at="[camera]"
+      <a-entity
           gltf-model="#house" 
           scale="0.001 0.001 0.001" 
           position = "0 0 0" 
@@ -79,7 +80,6 @@
         >
         </a-entity>
 	<a-sound src=#song autoplay="true"> </a-sound>
-	
 	>
 	</a=entity>
       </a-marker>
