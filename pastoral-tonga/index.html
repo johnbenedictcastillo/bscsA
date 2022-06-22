@@ -10,9 +10,20 @@
      window.onload = function () {
 	AFRAME.registerComponent("sunnyside-event", {
 	      init: function () {
+		      console.log("init")
 		//let sunnyside = document.querySelector('#sunnyside')
 		  this.el.addEventListener('touchstart', function (e)
 		     { 
+			  console.log("touched")
+			let sunnyrecipe = document.querySelector('#sunnyrecipe')
+			    sunnyrecipe.setAttribute('visible', true);
+			  console.log(e)
+		     }.bind(this));
+
+	     		//let sunnyside = document.querySelector('#sunnyside')
+		  this.el.addEventListener('click', function (e)
+		     { 
+			  console.log("clicked")
 			let sunnyrecipe = document.querySelector('#sunnyrecipe')
 			    sunnyrecipe.setAttribute('visible', true);
 			  console.log(e)
@@ -48,7 +59,7 @@
         ></a-text> -->
 	    <a-image sunnyside-event
                    src="#sunnyside"
-                   position="-1 0 -1"
+                   position="0 0 0"
                    scale="1 1 1"
                 ></a-image>
 	     <a-text
