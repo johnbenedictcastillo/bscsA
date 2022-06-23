@@ -55,65 +55,32 @@
             geometry="primitive: plane; width: 2.50" 
 	          material="color: #FFB6C1"
         ></a-text>
-<!-- 	    <a-image sunnyside-event
-                   src="#sunnyside"
-                   position="-1 0 -1"
-                   rotation="1 0 0"
-                   scale="0.5 0.5 0.5"
-                ></a-image>
-              
-              <a-image sunnyside-event
-                   src="#omellette"
-                   position="0 0 -1"
-                   scale="0.5 0.5 0.5"
-                ></a-image>
-            <a-image sunnyside-event
-                   src="#eggtoast"
-                   position="1 0 -1" 
-                   scale="0.5 0.5 0.5"
-                ></a-image>
-	     <a-text
-            id="sunnyrecipe"
-            value="Heat oil in an 8-inch nonstick skillet over medium-low. 
-                   Gently crack eggs into pan. 
-                   You shouldn't hear a hiss, and the eggs should lie flat and still. 
-                   If you hear sizzling or the whites flutter or bubble at all, turn down the heat. 
-                   Cook 3 minutes or until the whites are mostly set, with some still-runny whites near the yolks.
-                   Tilt pan toward you so oil pools on the bottom edge; dip a spoon in the oil, 
-                   and gently baste the uncooked patches of white until they're set. 
-                   Be careful not to baste the yolks, or they'll cloud over like cataracts. 
-                   Sprinkle with pepper and salt. Remove eggs from pan, leaving excess oil behind."
-            position="0 0 0 "
-	    scale = "1 1 1"
-            rotation = "0 5 0"
-            align="center"
-            color="white"
-            visible="false"
-            geometry="primitive: plane; width: 2.50" 
-	          material="color: #FFB6C1"
-        ></a-text> --> -->
 	    <a-entity sunnyside-event></a-entity>
       <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
-              <a-image sunnyside-event
+<!--               <a-image sunnyside-event
                    src="#sunnyside"
                    position="-1 0 -1"
                    rotation="1 0 0"
                    scale="1 1 1"
                 ></a-image>
               
-              <a-image  sunnyside-event
+              <a-image
                    src="#omellette"
                    position="0 0 -1"
                    scale="1 1 1"
                 ></a-image>
-            <a-image  sunnyside-event
+            <a-image
                    src="#eggtoast"
                    position="1 0 -1" 
                    scale="1 1 1"
-                ></a-image>
-	    <a-entity 
-		src = "#sunnyrecipe"
-            ></a-entity>
+                ></a-image> -->
+	      <a-box sunnyside-event
+                position:static; 
+                radius="1.25" 
+                rotation="10 43 45"
+                color="#66FF00">
+                </a-box>
+	      
       </a-marker>
       <a-entity camera></a-entity>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
