@@ -1,98 +1,93 @@
+<head>
+  <title>FLAETHER: OPvideo</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+  <script>
+    >
+                 window.onload = function() {
+                AFRAME.registerComponent('videohandler', {
+                    init: function () {
+                        var marker = this.el;
+                        this.vid = document.querySelector("#vid");
 
-    <head>
-        <title>FLAETHER: OPvideo</title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-        <script>>
-             window.onload = function() {
-            AFRAME.registerComponent('videohandler', {
-                init: function () {
-                    var marker = this.el;
-                    this.vid = document.querySelector("#vid");
+                        marker.addEventListener('markerFound', function () {
+                            this.toggle = true;
+                            this.vid.play();
+                        }.bind(this));
 
-                    marker.addEventListener('markerFound', function () {
-                        this.toggle = true;
-                        this.vid.play();
-                    }.bind(this));
-
-                    marker.addEventListener('markerLost', function () {
-                        this.toggle = false;
-                        this.vid.pause();
-                    }.bind(this));
-                }
-                },
-            });
-        </script>
-    <style>
+                        marker.addEventListener('markerLost', function () {
+                            this.toggle = false;
+                            this.vid.pause();
+                        }.bind(this));
+                    }
+                    },
+                });
+  </script>
+  <style>
     .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
-    </head>
+    .arjs-loader div {
+      text-align: center;
+      font-size: 1.25em;
+      color: white;
+    }
+  </style>
+</head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <div class="arjs-loader">
+<body style="margin: 0; overflow: hidden">
+  <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-        <a-scene 
-          vr-mode-ui="enabled: false;"
-          renderer='antialias: true; alpha: true; precision: medium;'
-          embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
-            <a-assets>
-                <video src="./assets/asset.mp4
-                preload="auto" 
-                id="vid" 
-                response-type="arraybuffer" 
-                loop
-                crossorigin webkit-playsinline 
-                autoplay 
-                muted
-                playsinline
-                ></video>
-            </a-assets>
+  <a-scene>
+    vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true;
+    precision: medium;' embedded arjs='trackingMethod: best; sourceType: webcam;
+    debugUIEnabled: false;'
+    <a-assets>
+      <video>
+        src="./assets/asset.mp4 preload="auto" id="vid"
+        response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay
+        muted playsinline
+      </video>
+    </a-assets>
 
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="./assets/marker.patt"
-                videohandler
-                smooth="true"
-                smoothCount="10"
-                smoothTolerance="0.01"
-                smoothThreshold="5"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="marker1"
-            >
-                <a-video
-                    src="#vid"
-                    class="clickable"
-                    rotation="-90 0 0" 
-                    position="50 150 -100" 
-                    width="300" 
-                    height="175"
-                    gesture-handler 
-                ></a-video>
-            </a-marker>
+    <a-marker
+      type="pattern"
+      preset="custom"
+      url="./assets/marker.patt"
+      videohandler
+      smooth="true"
+      smoothcount="10"
+      smoothtolerance="0.01"
+      smooththreshold="5"
+      raycaster="objects: .clickable"
+      emitevents="true"
+      cursor="fuse: false; rayOrigin: mouse;"
+      id="marker1"
+    >
+      <a-video
+        src="#vid"
+        class="clickable"
+        rotation="-90 0 0"
+        position="50 150 -100"
+        width="300"
+        height="175"
+        gesture-handler
+      ></a-video>
+    </a-marker>
 
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
