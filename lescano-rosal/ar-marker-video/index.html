@@ -6,7 +6,10 @@
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
         <script>
+             window.onload = function() {
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
@@ -21,34 +24,43 @@
                         this.toggle = false;
                         this.vid.pause();
                     }.bind(this));
+                }
                 },
             });
         </script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+        <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
         <a-scene 
           id="scene" 
-          embedded arjs 
           vr-mode-ui="enabled: false"
-          renderer="antialias: true; 
-          logarithmicDepthBuffer: true; 
-          colorManagement: true; sortObjects: true;">
+          loading-screen="enabled: false;"
+          renderer="logarithmicDepthBuffer: true;"
+          embedded 
+          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" >
             <a-assets>
                 <video
                     id="vid"
-                    src="./assets/asset.mp4"
+                    autoplay loop="true"
+                    crossorigin type="video/mp4"
+                    src="assets/asset.mp4"
                     preload="auto"
                     response-type="arraybuffer"
-                    autoplay
-                    unmuted
                 ></video>
             </a-assets>
 
             <a-marker
-                url="./assets/marker.patt"
-                smooth="true"
+                type="pattern"
+                preset="custom"
+                url="assets/marker.patt"
                 videohandler
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.01"
+                smoothThreshold="5"
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
@@ -57,13 +69,14 @@
                 <a-video
                     src="#vid"
                     class="clickable"
+                    scale="1 1 1"
+                    position="0 0.1 0"
+                    rotation="-90 0 0"
                     gesture-handler
                 ></a-video>
             </a-marker>
 
             <a-entity camera></a-entity>
-            <a-entity cursor="rayOrigin:mouse"></a-entity>
-            <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
         </a-scene>
     </body>
 </html>
