@@ -35,13 +35,10 @@
     <div>Loading, please wait...</div>
   </div>
         <a-scene 
-          id="scene"
-          camera
-          vr-mode-ui="enabled: false"
-          loading-screen="enabled: false;"
+          vr-mode-ui="enabled: false;"
           renderer="logarithmicDepthBuffer: true;"
-          embedded 
-          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" >
+          embedded
+          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
             <a-assets>
                 <video
                     id="vid"
