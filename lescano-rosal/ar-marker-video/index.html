@@ -1,9 +1,10 @@
-<!doctype html>
-<html>
+
     <head>
         <title>FLAETHER: OPvideo</title>
-        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script>>
              window.onload = function() {
             AFRAME.registerComponent('videohandler', {
@@ -51,20 +52,19 @@
     <div>Loading, please wait...</div>
   </div>
         <a-scene 
-          embedded arjs='sourceType: webcam;' 
-          renderer='antialias: true; alpha: true; precision: medium;'>
+          vr-mode-ui="enabled: false;"
+          renderer='antialias: true; alpha: true; precision: medium;'
+          embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
             <a-assets>
-                <video
-                    id="vid"
-                    autoplay loop="true"
-                    crossorigin type="video/mp4"
-                    src="assets/asset.mp4"
-                    preload="auto"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    playsinline
+                <video src="./assets/asset.mp4
+                preload="auto" 
+                id="vid" 
+                response-type="arraybuffer" 
+                loop
+                crossorigin webkit-playsinline 
+                autoplay 
+                muted
+                playsinline
                 ></video>
             </a-assets>
 
@@ -96,4 +96,3 @@
             <a-entity camera></a-entity>
         </a-scene>
     </body>
-</html>
