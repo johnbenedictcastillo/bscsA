@@ -61,19 +61,14 @@
       ></video>
     </a-assets>
 
-    <a-marker
-      type="pattern"
-      preset="custom"
-      url="./assets/marker.patt"
-      videohandler
-      smooth="true"
-      smoothcount="10"
-      smoothtolerance="0.01"
-      smooththreshold="5"
-      raycaster="objects: .clickable"
-      emitevents="true"
-      cursor="fuse: false; rayOrigin: mouse;"
-      id="marker1"
+   <a-nft
+    videohandler
+            type='nft' 
+            url="./assets/marker"
+            smooth="true" 
+            smoothCount="10" 
+            smoothTolerance="0.01" 
+            smoothThreshold="5"
     >
       <a-video
         src="#vid"
@@ -84,7 +79,7 @@
         height="175"
         gesture-handler
       ></a-video>
-    </a-marker>
+     </a-nft>
 
     <a-entity camera></a-entity>
   </a-scene>
