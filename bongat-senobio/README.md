@@ -26,11 +26,11 @@ FurniShop AR is a product viewer that helps the user to view the products offere
 - [x] Products Page
 - [ ] Product Description page
 
-### 3. Implementation of AR Product Viewer on website
+### 3. Implementation of AR Product Viewer on website (Completed)
 #### (June 27 - July 4, 2022)
-- [ ] Product query handling
-- [ ] AR button for the product page
-- [ ] JS Local storage on website
+- [x] Product query handling
+- [x] AR button for the product page
+- [x] JS Local storage on website
 
 ### 4. Finalization 
 #### (July 5-12, 2022)
