@@ -29,11 +29,15 @@ body{
     color: #424144;
     border-bottom: 4px solid #EABF7C;
 }
-.navbar .logo a,
+.navbar .logo a{
+    text-decoration: none;
+    color: #424144;
+}
 .navbar .logo a:visited{
     text-decoration: none;
     color: #424144;
 }
+
 .navbar .menu li{
     list-style: none;
     display: inline-block;
@@ -107,6 +111,10 @@ body{
     color: #424144;
 }
 /* Products Card */
+#psec{
+    background-color: rgb(73, 45, 37);
+}
+
 .sec{
     padding: 10px 5%;
 }
@@ -121,6 +129,15 @@ body{
     border-radius: 5px;
     padding: 5px;
     margin: 20px;
+    cursor: pointer;
+}
+.products .card:hover{
+    background-color: #8D5E2F;
+    color: white;
+}
+
+.products .card:hover .title{
+    color: white;
 }
 .products .card img{
     height: 100%;
@@ -170,4 +187,99 @@ body{
     font-weight: 900;
     border: 2px solid #EABF7C;
     border-radius: 20px;
+}
+/* Single-Product Page */
+.product{ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.product .left{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+}
+.product .left img{
+    width: 500px;
+    height: 100%;
+}
+.product .right{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+}
+.product .right .ppath{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #424144;
+    padding: 0 20px;
+}
+.product .right .pname{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #EABF7C;
+    font-weight: bold;
+    padding: 0 20px;
+}
+.product .right .price{
+    font-size: 40px;
+    margin-bottom: 20px;
+    color:rgb(73, 45, 37);
+    font-weight: bold;
+    padding: 0 20px;
+}
+.product .right .pdetail{
+    font-size: 30px;
+    color: #424144;
+    margin-bottom: 10px;
+    font-weight: 600;
+    padding: 0 20px;
+}
+.product .right .pdcontent{
+    font-size: 25px;
+    color: #424144;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+.product .right .pdimensions{
+    font-size: 25px;
+    color: #424144;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+.product .right .buttons{
+    display: flex;
+    justify-content: right; 
+    padding-right: 20px;
+}
+.product .right .buttons .buybtn{
+    font-size: 20px;
+    color: #EABF7C;
+    background-color: white;
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 2px solid #EABF7C;
+    border-radius: 30px; 
+    margin-right: 20px;
+    cursor: pointer;
+}
+.product .right .buttons .parbtn{
+    font-size: 20px;
+    color: #EABF7C;
+    background-color: rgb(73, 45, 37);
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 2px solid #EABF7C;
+    border-radius: 30px; 
+    margin-right: 20px;
+    cursor: pointer;
+}
+.product .right .buttons button:hover{
+    background-color: #EABF7C;
+    color: white;
 }
