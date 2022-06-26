@@ -29,7 +29,8 @@ body{
     color: #424144;
     border-bottom: 4px solid #EABF7C;
 }
-.navbar .logo a{
+.navbar .logo a,
+.navbar .logo a:visited{
     text-decoration: none;
     color: #424144;
 }
