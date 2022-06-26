@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>FurniShop</title> 
 </head>
 <body>
@@ -17,8 +17,8 @@
     <div class="logo"><h1><a href="index.html">FurniShop</a></h1></div>
 
     <ul class="menu">
-      <li><a href="" class="active">Home</a></li>
-      <li><a href="">Products</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/products.html">Products</a></li>
       <li><a href="">Contact Us</a></li>
       <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
     </ul>
@@ -33,7 +33,7 @@
       <h1>Furnitures for your needs!</h1>
       <p>Get the best furnitures for your home goals!</p>
       <li>TIP: You can view our products in AR to help you decide on your purchase!</li>
-      <button>Shop Now</button>
+      <button onclick="location.href = 'pages/products.html';">Shop Now</button>
     </div>
   </section>
 
@@ -147,5 +147,27 @@
       <!--Card end-->
     </div>
   </section>
+  <script>
+    $(document).ready(function(){
+      function setStorage(src, scale, info){
+        localStorage.setItem('src', src);
+        localStorage.setItem('scale', scale);
+        localStorage.setItem('info', info);
+      };
+      
+      $('.arbtn').on('click', function(){
+        var id = $(this).attr('id');
+        if (id === 'p1-btn'){
+          setStorage('./assets/modern-white-chair.glb', '1 1 1', 'Modern White Chair');
+        } else if (id === 'p2-btn'){
+          setStorage('./assets/modern-wooden-chair.glb', '0.04 0.04 0.04', 'Modern Wooden Chair');
+        } else if (id === 'p3-btn'){
+          setStorage('./assets/office-chair.glb', '1 1 1', 'Blue Office Chair');
+        }
+        window.location.href ='ar-model-viewer/index.html';
+        
+      });
+    });
+  </script>
 </body>
 </html>
