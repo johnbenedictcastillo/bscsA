@@ -18,7 +18,7 @@
 
     <ul class="menu">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="pages/products.html" class="active" >Products</a></li>
+      <li><a href="products.html" class="active" >Products</a></li>
       <li><a href="">Contact Us</a></li>
       <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
     </ul>
@@ -34,7 +34,7 @@
     <div class="products">
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p1">
         <div class="img"><img src="../img/p1-modern-white-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern White Chair</div>
@@ -47,7 +47,7 @@
       <!--Card end-->
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p2">
         <div class="img"><img src="../img/p2-modern-wooden chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern Wooden Chair</div>
@@ -60,7 +60,7 @@
       <!--Card end-->
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p3">
         <div class="img"><img src="../img/p3-office-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Blue Office Chair</div>
@@ -73,7 +73,7 @@
       <!--Card end-->
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p1">
         <div class="img"><img src="../img/p1-modern-white-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern White Chair</div>
@@ -86,7 +86,7 @@
       <!--Card end-->
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p1">
         <div class="img"><img src="../img/p1-modern-white-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern White Chair</div>
@@ -99,7 +99,7 @@
       <!--Card end-->
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p1">
         <div class="img"><img src="../img/p1-modern-white-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern White Chair</div>
@@ -112,7 +112,7 @@
       <!--Card end-->
 
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p1">
         <div class="img"><img src="../img/p1-modern-white-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern White Chair</div>
@@ -125,7 +125,7 @@
       <!--Card end-->
       
       <!--Card start-->
-      <div class="card">
+      <div class="card" id="p1">
         <div class="img"><img src="../img/p1-modern-white-chair.png" alt=""></div>
         <div class="category">Chairs</div>
         <div class="title">Modern White Chair</div>
@@ -136,6 +136,7 @@
         </div>
       </div>
       <!--Card end-->
+
     </div>
     <script>
         $(document).ready(function(){
@@ -144,18 +145,58 @@
             localStorage.setItem('scale', scale);
             localStorage.setItem('info', info);
           };
-          
-         $('.arbtn').on('click', function(){
-           var id = $(this).attr('id');
-           if (id === 'p1-btn'){
-              setStorage('/bongat-senobio/ar-model-viewer/assets/modern-white-chair.glb', '1 1 1', 'Modern White Chair');
-            } else if (id === 'p2-btn'){
-              setStorage('/bongat-senobio/ar-model-viewer/assets/modern-wooden-chair.glb', '0.04 0.04 0.04', 'Modern Wooden Chair');
-            } else if (id === 'p3-btn'){
-              setStorage('/bongat-senobio/ar-model-viewer/assets/office-chair.glb', '1 1 1', 'Blue Office Chair');
-          }
-          window.location.href ='../ar-model-viewer/index.html';
-        
+          function setProductPage(img ,pId, category, pName, price, pdContent, pDimensions){
+            localStorage.setItem('img', img);
+            localStorage.setItem('pId', pId);
+            localStorage.setItem('category', category);
+            localStorage.setItem('pName', pName);
+            localStorage.setItem('price', price);
+            localStorage.setItem('pdContent', pdContent);
+            localStorage.setItem('pDimensions', pDimensions);
+          };
+          $('.arbtn').on('click', function(e){
+            e.stopPropagation();
+            var id = $(this).attr('id');
+             if (id === 'p1-btn'){
+          setStorage('/bongat-senobio/ar-model-viewer/assets/modern-white-chair.glb', '1 1 1', 'Modern White Chair');
+        } else if (id === 'p2-btn'){
+          setStorage('/bongat-senobio/ar-model-viewer/assets/modern-wooden-chair.glb', '0.04 0.04 0.04', 'Modern Wooden Chair');
+        } else if (id === 'p3-btn'){
+          setStorage('/bongat-senobio/ar-model-viewer/assets/office-chair.glb', '1 1 1', 'Blue Office Chair');
+        }
+            window.location.href ='../ar-model-viewer/index.html';    
+          });
+          $('.card').on('click', function(){
+            var id = $(this).attr('id');
+            if (id === 'p1'){
+              setProductPage(
+                '../img/p1-modern-white-chair.png', 
+                'p1', 
+                'Chairs', 
+                'Modern White Chair',
+                '₱1000.00',
+                'A cozy chair with sleek white modern design and foldable, ideal for your living room.',
+                'W39.5 x D39.5 x H82.3 cm');
+            } else if (id === 'p2'){
+              setProductPage(
+                '../img/p2-modern-wooden chair.png', 
+                'p2', 
+                'Chairs', 
+                'Modern Wooden Chair',
+                '₱500.00',
+                'a simple yet modern looking wooden chair, ideal for your dining room.',
+                'W43 x D44 x H90 cm');
+              } else if (id === 'p3'){
+                setProductPage(
+                  '../img/p3-office-chair.png', 
+                  'p3', 
+                  'Chairs', 
+                  'Blue Office Chair',
+                  '₱725.00',
+                  'A generic and affordble blue office chair with comfy paddings for ergonomics, ideal for your desk setup.',
+                  'W61.01 x D48 x H 97-105 cm');
+                }
+            window.location.href ='single-product.html';    
           });
         });
       </script> 
