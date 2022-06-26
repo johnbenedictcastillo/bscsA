@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script>
+    	window.onload = function(){
+		    //localSorage
+		    const imagePath = localStorage.getItem('img');
+		    const productId = localStorage.getItem('pId');
+			const productCategory = localStorage.getItem('category');
+		    const productName = localStorage.getItem('pName');
+            const productPrice = localStorage.getItem('price');
+		    const productDetails = localStorage.getItem('pdContent');
+		    const productDimenions = localStorage.getItem('pDimensions');
+				
+			//jquery set model to load
+			$('.productimg').attr('src', imagePath);
+			$('.parbtn').attr('id', productId);
+			$('#category').text(productCategory);
+			$('.pname').text(productName);
+			$('.price').text(productPrice);
+			$('.pdcontent').text(productDetails);
+			$('#dimensions').text(productDimenions);
+            
+			//localStorage.clear();
+		    };
+  </script>
+  <title>FurniShop</title> 
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="logo"><h1><a href="index.html">FurniShop</a></h1></div>
+
+    <ul class="menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="products.html" >Products</a></li>
+      <li><a href="">Contact Us</a></li>
+      <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
+    <!--==Responsive btn==-->
+    <div class="menu-btn">
+      <i class="fa fa-bars"></i>
+    </div>
+  </nav>
+
+  <h1 class="pheading">Product Page</h1>
+
+  <section class="sec">
+    <div class="product">
+      <div class="left">
+        <div class="pimg"><img class="productimg" src="../img/p1-modern-white-chair.png" alt=""></div>
+      </div>
+      <div class="right">
+        <div class="ppath">Home > Products > <span id="category">Chairs</span></div>
+        <div class="pname">Product Name</div>
+        <div class="price">Price</div>
+        <div class="pdetail">Product Details</div>
+        <div class="pdcontent">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia asperiores magni voluptas alias consectetur iste debitis fuga harum, nobis odit consequatur quidem sit laborum recusandae praesentium velit minima obcaecati minus!</div>
+        <div class="pdimensions">Dimensions: <span id-='dimensions'>10cm x 12 cm x 15 cm</span></div>
+        <div class="buttons">
+            <button class="buybtn">Buy Now</button>
+            <button class="parbtn" id="1"><i class="fa-solid fa-eye"></i> View in AR</button>
+        </div>  
+      </div>
+    </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+          function setStorage(src, scale, info){
+            localStorage.setItem('src', src);
+            localStorage.setItem('scale', scale);
+            localStorage.setItem('info', info);
+          };
+          
+          $('.parbtn').on('click', function(){
+            var id = $(this).attr('id');
+            if (id === 'p1'){
+              setStorage('./assets/modern-white-chair.glb', '1 1 1', 'Modern White Chair');
+            } else if (id === 'p2'){
+              setStorage('./assets/modern-wooden-chair.glb', '0.04 0.04 0.04', 'Modern Wooden Chair');
+            } else if (id === 'p3'){
+              setStorage('./assets/office-chair.glb', '1 1 1', 'Blue Office Chair');
+            }
+            window.location.href ='../ar-model-viewer/index.html';
+            
+          });
+        });
+      </script>
+  </div>
+</body>
+</html>
