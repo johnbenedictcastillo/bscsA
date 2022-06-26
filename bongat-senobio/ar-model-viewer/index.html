@@ -202,7 +202,6 @@
 			};
 
 			exit.addEventListener('click', function () {
-				unlockModel();
 				scene.xrSession.end();
 			});
 			/* temporary model switcher
@@ -306,7 +305,7 @@
 					unlockbtn.style.display = "flex";
 					leftbtn.style.display = "flex";
 					rightbtn.style.display = "flex";
-					
+				
 					instructions.innerHTML = "User L-R buttons to rotate model";
 					
 					return;
