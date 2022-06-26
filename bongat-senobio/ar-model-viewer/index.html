@@ -75,28 +75,46 @@
 		</style>
 		<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 		<script src="/bongat-senobio/ar-model-viewer/ar-components.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+		<script>
+			window.onload = function(){
+				//localSorage
+				const modelSrc = localStorage.getItem('src');
+				const modelScale = localStorage.getItem('scale');
+				const modelInfo = localStorage.getItem('info');
+				
+				//jquery set model to load
+				$('#model-asset').attr('src', modelSrc);
+				$('#model').attr('scale', modelScale);
+				$('#model-info').text(modelInfo);
+
+				//localStorage.clear();
+			};
+		</script>
 	</head>
 	<body class="inline">
 		<a-scene webxr="optionalFeatures: hit-test, dom-overlay; overlayElement:#overlay;" physics="debug: false">
 			<a-assets>
-				<a-asset-item id="placeholder" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/box.glb"></a-asset-item>
-				<a-asset-item id="model1" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/modern-white-chair.glb"></a-asset-item>
-				<a-asset-item id="model2" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/modern-wooden-chair.glb"></a-asset-item>
-				<a-asset-item id="model3" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets//office-chair.glb"></a-asset-item>
+				<a-asset-item id="model-asset" response-type="arraybuffer" src="/bongat-senobio/ar-model-viewer/assets/box.glb"></a-asset-item>
+				<!--
+				<a-asset-item id="model1" response-type="arraybuffer" src="./assets/modern-white-chair.glb"></a-asset-item>
+				<a-asset-item id="model2" response-type="arraybuffer" src="./assets/modern-wooden-chair.glb"></a-asset-item>
+				<a-asset-item id="model3" response-type="arraybuffer" src="./assets//office-chair.glb"></a-asset-item>
+				-->
 			</a-assets>
 			<a-entity ar-hit-test="doHitTest:false" visible="false">
 				<a-plane
 					rotation="-90 0 0"
 					width="0.2"
 					height="0.2"
-					src="/bongat-senobio/ar-model-viewer/reticle.png"
+					src="./reticle.png"
 					material="transparent:true;"
 				></a-plane>
 			</a-entity>
 			<a-entity
 				id="model"
-				gltf-model="#placeholder"
+				gltf-model="#model-asset"
 				scale="0.5 0.5 0.5"
 				position="-2 0.5 -5"
 				hide-in-ar-mode
@@ -126,12 +144,9 @@
 				<section class="overlay-content">
 					<p id="instructions">Tap where to place model</p>
 					<p id="model-info">Box placeholder model</p>
-					<p id="instructions2" style="display: block;">Change model by pressing buttons 1-3</p>
+					<p id="instructions2" style="display: block;"></p>
 				</section>
 				<div style="display: flex; justify-content: space-between; align-self: stretch;">
-					<button id="button1">1</button>
-					<button id="button2">2</button>
-					<button id="button3">3</button>
 					<button id="lock-button">Lock</button>
 					<button id="unlock-button" style="display: none">Unlock</button>
 					<button id="left-button" style="display: none">L</button>
@@ -150,9 +165,6 @@
 			const reticle = document.querySelector("[ar-hit-test]");
 			const model = document.getElementById('model');
 			const instructions = document.getElementById('instructions');
-			const button1 = document.getElementById('button1');
-			const button2 = document.getElementById('button2');
-			const button3 = document.getElementById('button3');
 			const lockbtn = document.getElementById('lock-button');
 			const unlockbtn = document.getElementById('unlock-button');
 			const leftbtn = document.getElementById('left-button');
@@ -192,7 +204,7 @@
 			exit.addEventListener('click', function () {
 				scene.xrSession.end();
 			});
-
+			/* temporary model switcher
 			button1.addEventListener('click', function() {
 				let assetModel = document.getElementById("model1");
 				let modelPath = assetModel.getAttribute("src");
@@ -221,7 +233,7 @@
 				modelInfo.innerHTML = "Office Chair";
 				
 				instructions2.style.display = "none";
-			});
+			});*/
 			
 			scene.addEventListener("enter-vr", () => {
 				const domOverlay = hasDomOverlay(scene.xrSession);
