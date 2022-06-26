@@ -20,11 +20,11 @@ FurniShop AR is a product viewer that helps the user to view the products offere
 - [x] Rotation of 3d model along the Y-axis
 - [x] Capture feature (canceled webxr doesn't suppport screenshot on ar immersive view due to security measures)
 
-### 2. Creating a Mockup Shopping Website
+### 2. Creating a Mockup Shopping Website (Completed)
 #### (June 20-26, 2022)
 - [x] Home Page
 - [x] Products Page
-- [ ] Product Description page
+- [x] Product Description page
 
 ### 3. Implementation of AR Product Viewer on website (Completed)
 #### (June 27 - July 4, 2022)
