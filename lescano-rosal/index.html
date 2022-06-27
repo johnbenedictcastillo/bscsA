@@ -2,31 +2,85 @@
 <html>
     <head>
 	<title>FLAETHER: 3DLUFFY</title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        	<script src="./js/vendor/aframe.min.js"></script>
+		<script src="./js/vendor/aframe-ar.js"></script>
+		<script src="./js/vendor/zingtouch.min.js"></script>
+
+		<script src="./js/3d-ops.js"></script>
+		<script src="./js/ar-cam.js"></script>
+		<script src="./js/image-processor.js"></script>
+		<script src="./js/ui-utils.js"></script>
+		<!-- <script src="./js/debug.js"></script> -->
+
+		<link rel="stylesheet" href="./css/styles.css">
     </head>
 
     <body style="margin: 0; overflow: hidden;">
+	<div class="overlay" id="fullscreen-overlay">
+        <div class="lato">enter fullscreen</div>
+        <button id="fullscreen-button" onclick="requestFullScreen()"></button>
+        <div class="lato">for the best experience</div>
+   	</div>
+    		<div class="overlay" id="loading-overlay">
+        	<div class="cssload-wrap">
+        	<div class="cssload-cssload-spinner"></div>
+		</div>
+    </div>
+    <div class="overlay" id="rotate-overlay">
+        <div class="phone shadow">
+            <div class="screen"></div>
+        </div>
+        <div class="phone rotate90">
+            <div class="screen"></div>
+        </div>
+        <div class="arrow-wrap">
+            <div class="arrow-circle">
+                <div class="arrow"></div>
+            </div>
+            <div class="arrow-head"></div>
+        </div>
+        <span class="lato">rotate device</span>
+    </div>
+    <div class="overlay" id="snap-overlay">
+        <span class="lato">capturing...</span>
+    </div>
+    <div class="overlay" id="preview-overlay">
+        <div class="preview-container">
+            <img id="preview-img" src="" alt="preview">
+            <div class="preview-actions">
+                <span class="lato">preview</span>
+                <button id="save-capture-button">save</button>
+                <button id="retake-button">retake</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="log"></div> -->
+    <section class="log" style="display: none;">
+        <div id="positionLog">Position: 0 -0.75 0</div>
+        <div id="rotationLog">Rotation: 0 0 0</div>
+        <div id="zoomLog">Scale: 0.35</div>
+    </section>
+    <section class="controls">
+        <!--
+        <button onclick="X()">X</button>
+        <button onclick="Y()">Y</button>
+        <button onclick="Z()">Z</button>
+        <button onclick="P()">P</button> 
+        -->
+        <button id="move-button" class="toggler" onclick="toggleMove()"></button>
+        <button id="snap-button" onclick="getSnap()"></button>
+        <button id="rotate-button" class="toggler" onclick="toggleRotate()"></button>
+    </section>
+	    
         <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
+            id="scene" 
+	    embedded arjs 
+            vr-mode-ui="enabled: false"
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
 
         >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="./assets/asset.glb"
-                ></a-asset-item>
-            </a-assets>
-
+            
             <a-marker
                 id="animated-marker"
                 type="pattern"
@@ -37,17 +91,18 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
+		<a-entity position="0 0 0" rotation="270 0 0">
                 <a-entity
                     id="bowser-model"
-                    scale="0.14377988660260244 0.14377988660260244 0.14377988660260244"
+                    position="0 -0.5 0" rotation="0 0 0" scale="12.5 12.5 12.5"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
+                    gltf-model="./assets/asset.glb"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
             </a-marker>
 
-            <a-entity camera></a-entity>
+            <a-entity id="camera" camera></a-entity>
         </a-scene>
     </body>
 </html>
