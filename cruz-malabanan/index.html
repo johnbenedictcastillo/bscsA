@@ -30,24 +30,27 @@
           src="./couple1.glb"
         >
         </a-asset-item>
-      </a-assets>
-	
-      <a-assets>
+        
         <a-asset-item
           id="house"
           src="./candy_house.glb"
         >
         </a-asset-item>
-      </a-assets>
         
-      <a-assets>
         <a-asset-item 
-	  id="cake" 
-	  response-type="arraybuffer" 
-	  src="./cakes.glb"
-	  >
-	  </a-asset-item>
-        </a-assets>
+        id="cake" 
+        response-type="arraybuffer" 
+        src="./cakes.glb"
+        >
+        </a-asset-item>
+        
+        <a-asset-item 
+        id="butterflies" 
+        response-type="arraybuffer" 
+        src="./butterflies.glb"
+        >
+        </a-asset-item>
+      </a-assets>
       
       <a-marker
         type="pattern"
@@ -67,10 +70,18 @@
           gltf-model="#cake" 
           scale="0.015 0.015 0.015" 
           position = "-0.4 0 0.7" 
-	  animation-mixer = "clip: Take 001"
+	  animation-mixer = "clip:Take 001"
         >
         </a-entity>
-	      
+	
+	<a-entity
+          gltf-model="#butterflies" 
+          scale="2 2 2" 
+          position = "1 2 -3" 
+	  animation-mixer = "clip:Animation"
+        >
+        </a-entity>
+	    
         <a-entity
           id="couple-model"
           gltf-model="#couple"
