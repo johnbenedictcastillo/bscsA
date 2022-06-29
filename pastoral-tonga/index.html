@@ -1,34 +1,111 @@
-
 <!DOCTYPE html>
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <body style="margin : 0px; overflow: hidden;">
-    
-    <script>	   
-	AFRAME.registerComponent("sunnyside-event", {
-	      init: function () {
-		      
-			  console.log("init")
-		  		//let sunnyside = document.querySelector('#sunnyside')
-		  this.el.addEventListener('click', function (e)
-		     { 
-			if (id === 'sunnyrecipe'){
-			    sunnyrecipe.setAttribute('visible', true);
-			}
-			  console.log(e)
-		     }.bind(this));
-		   }
-	     });
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <body style="margin: 0px; overflow: hidden">
+    <script>
+        AFRAME.registerComponent("sunnyside-event", {
+        init: function () {
+          console.log("init");
+          let sunnyside = $("#sunnyside");
+          let sunnyrecipe = $("#sunnyrecipe");
+          this.el.addEventListener(
+            "click",
+            function (e) {
+            if (sunnyrecipe.attr('visible') === false) {
+              sunnyrecipe.attr("visible", true);
+            } else {
+              sunnyrecipe.attr("visible", false);
+            }
+              console.log(sunnyrecipe.attr('visible'));
+            }.bind(this)
+          )
+        },
+      });
+      AFRAME.registerComponent("omellette-event", {
+        init: function () {
+          console.log("init")
+          let omellette = $("#omellette")
+          let omelletterecipe = $("#omelletterecipe")
+          this.el.addEventListener(
+            "click",
+            function (e) {
+              if (omelletterecipe.attr('visible') === false) {
+                omelletterecipe.attr("visible", true);
+            } else {
+              omelletterecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      })
+
+      AFRAME.registerComponent("eggtoast-event", {
+        init: function () {
+          console.log("init")
+          let eggtoast = $("#eggtoast")
+          let eggtoastrecipe = $("#eggtoastrecipe")
+          this.el.addEventListener(
+            "click",
+            function (e) {
+              if (eggtoastrecipe.attr('visible') === false) {
+                eggtoastrecipe.attr("visible", true);
+            } else {
+              eggtoastrecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      })
     </script>
+
     <a-scene embedded arjs>
       <a-assets>
         <img id="sunnyside" src="./assets/sunnysideup.jpg" />
         <img id="omellette" src="./assets/omellette.jpeg" />
         <img id="eggtoast" src="./assets/eggtoasts.jpg" />
       </a-assets>
-      <a-text
+
+      <!-- 	    <a-entity sunnyside-event></a-entity> -->
+      <a-marker egg type="pattern" url="./patt/pattern-goodegg-favicon.patt">
+        <a-plane
+          sunnyside-event
+          src="#sunnyside"
+          position="-1 0 -1"
+          rotation="1 0 0"
+          scale="1 1 1"
+          look-at="[camera]"
+        ></a-plane>
+
+        <a-plane
+          omellette-event
+          src="#omellette"
+          position="0 0 -1"
+          scale="1 1 1"
+          look-at="[camera]"
+        ></a-plane>
+        <a-plane
+          eggtoast-event
+          src="#eggtoast"
+          position="1 0 -1"
+          scale="1 1 1"
+          look-at="[camera]"
+        ></a-plane>
+        <a-plane
+          look-at="[camera]"
+          position="1 1 1"
+          scale="1 1 1"
+          color="#FFB6C1"
+        >
+          <a-text
             id="sunnyrecipe"
             value="Heat oil in an 8-inch nonstick skillet over medium-low. 
                    Gently crack eggs into pan. 
@@ -40,39 +117,64 @@
                    Be careful not to baste the yolks, or they'll cloud over like cataracts. 
                    Sprinkle with pepper and salt. Remove eggs from pan, leaving excess oil behind."
             position="1 1 1"
-	    scale = "1 1 1"
+            scale="0.7 0.7 0.7"
             align="center"
             color="white"
             visible="false"
-            geometry="primitive: plane; width: 2.50" 
-	          material="color: #FFB6C1"
-        ></a-text>
-<!-- 	    <a-entity sunnyside-event></a-entity> -->
-      <a-marker egg type='pattern' url='./patt/pattern-goodegg-favicon.patt'>
-<!--               <a-image sunnyside-event
-                   src="#sunnyside"
-                   position="-1 0 -1"
-                   rotation="1 0 0"
-                   scale="1 1 1"
-                ></a-image>
-              
-              <a-image
-                   src="#omellette"
-                   position="0 0 -1"
-                   scale="1 1 1"
-                ></a-image>
-            <a-image
-                   src="#eggtoast"
-                   position="1 0 -1" 
-                   scale="1 1 1"
-                ></a-image> -->
-	      <a-box sunnyside-event
-                position:static; 
-                radius="1.25" 
-                rotation="0 0 0"
-                color="#66FF00">
-                </a-box>
-	      
+            look-at="[camera]"
+          ></a-text>
+        </a-plane>
+
+        <a-plane
+          look-at="[camera]"
+          position="1 1 1"
+          scale="1 1 1"
+          color="#FFB6C1"
+        >
+          <a-text
+            id="omelletterecipe"
+            value="Beat the eggs: Use two or three eggs per omelette, depending on how hungry you are. 
+                   Beat the eggs lightly with a fork.
+                   Melt the butter: Use an 8-inch nonstick skillet for a 2-egg omelette, a 9-inch skillet for 3 eggs. 
+                   Melt the butter over medium-low heat, and keep the temperature low and slow when cooking the eggs so the bottom doesn’t get too brown or overcooked.
+                   Add the eggs: Let the eggs sit for a minute, then use a heatproof silicone spatula to gently lift the cooked eggs from the edges of the pan. 
+                   Tilt the pan to allow the uncooked eggs to flow to the edge of the pan.
+                   Fill the omelette: Add the filling—but don't overstuff the omelette—when the eggs begin to set. Cook for a few more seconds
+                   Fold and serve: Fold the omelette in half. Slide it onto a plate with the help of a silicone spatula."
+            position="1 1 1"
+            scale="0.7 0.7 0.7"
+            align="center"
+            color="white"
+            visible="false"
+            look-at="[camera]"
+          ></a-text>
+        </a-plane>
+
+        <a-plane
+          look-at="[camera]"
+          position="1 1 1"
+          scale="1 1 1"
+          color="#FFB6C1"
+        >
+          <a-text
+            id="eggtoastrecipe"
+            value="In a bowl, combine 1 Tbsp of mayonnaise and ketchup till well combined. Set aside.
+                   Combine eggs, milk, salt and black pepper in a bowl till evenly combined and set aside.
+                   Spread some butter on both sides of your sliced breads and toast them on a heated pan, till golden brown.
+                   Transfer over to a plate and spread one side of the toasts with the ketchup mayo sauce before layering with cheese and ham. Set aside.
+                   Heat up your pan on med heat, add 1 Tbsp of butter and pour half of the scramble egg mixture. Use your spatula and begin pulling the cooked outer edges in towards the center of the eggs. 
+                   Repeat till the scramble collects in the center of the pan, 90% cooked.
+                   Quickly transfer over to the toast, layered with cheese and ham and cover with another piece of toast. And your breakfast is ready!
+                   (Optional) : Place the sandwich on a holder, wrapped with parchment and drizzle some more mayonnaise and garnish with some dried parsley"
+            position="1 1 1"
+            scale="0.7 0.7 0.7"
+            align="center"
+            color="white"
+            visible="false"
+            look-at="[camera]"
+          ></a-text>
+        </a-plane>
+
       </a-marker>
       <a-entity camera></a-entity>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
