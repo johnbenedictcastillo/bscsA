@@ -65,6 +65,60 @@
           )
         },
       })
+
+      AFRAME.registerComponent("sunnyside-event", {
+        init: function () {
+          console.log("init");
+          let sunnyside = $("#sunnyside");
+          let sunnyrecipe = $("#sunnyrecipe");
+          this.el.addEventListener(
+            "touch",
+            function (e) {
+            if (sunnyrecipe.attr('visible') === false) {
+              sunnyrecipe.attr("visible", true);
+            } else {
+              sunnyrecipe.attr("visible", false);
+            }
+              console.log(sunnyrecipe.attr('visible'));
+            }.bind(this)
+          )
+        },
+      });
+      AFRAME.registerComponent("omellette-event", {
+        init: function () {
+          console.log("init")
+          let omellette = $("#omellette")
+          let omelletterecipe = $("#omelletterecipe")
+          this.el.addEventListener(
+            "touch",
+            function (e) {
+              if (omelletterecipe.attr('visible') === false) {
+                omelletterecipe.attr("visible", true);
+            } else {
+              omelletterecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      })
+
+      AFRAME.registerComponent("eggtoast-event", {
+        init: function () {
+          console.log("init")
+          let eggtoast = $("#eggtoast")
+          let eggtoastrecipe = $("#eggtoastrecipe")
+          this.el.addEventListener(
+            "touch",
+            function (e) {
+              if (eggtoastrecipe.attr('visible') === false) {
+                eggtoastrecipe.attr("visible", true);
+            } else {
+              eggtoastrecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      })
     </script>
 
     <a-scene embedded arjs>
@@ -118,7 +172,7 @@
                    Sprinkle with pepper and salt. Remove eggs from pan, leaving excess oil behind."
             position="1 1 1"
             scale="0.7 0.7 0.7"
-            align="center"
+            align="left"
             color="white"
             visible="false"
             look-at="[camera]"
@@ -143,7 +197,7 @@
                    Fold and serve: Fold the omelette in half. Slide it onto a plate with the help of a silicone spatula."
             position="1 1 1"
             scale="0.7 0.7 0.7"
-            align="center"
+            align="left"
             color="white"
             visible="false"
             look-at="[camera]"
@@ -168,7 +222,7 @@
                    (Optional) : Place the sandwich on a holder, wrapped with parchment and drizzle some more mayonnaise and garnish with some dried parsley"
             position="1 1 1"
             scale="0.7 0.7 0.7"
-            align="center"
+            align="left"
             color="white"
             visible="false"
             look-at="[camera]"
