@@ -73,6 +73,29 @@
                     class="clickable"
                     gesture-handler
                 ></a-video>
+                
+                <a-marker
+                type="pattern"
+                preset="custom"
+                url="assets/hiro.patt"
+                videohandler
+                smooth="true"
+                smoothCount="10"
+                smoothTolerance="0.01"
+                smoothThreshold="5"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-video
+                    src="./assets/blackclover.mp4"
+                    scale="1 1 1"
+                    position="0 0.1 0"
+                    rotation="-90 0 0"
+                    class="clickable"
+                    gesture-handler
+                ></a-video>
             </a-marker>
 
             <a-entity camera></a-entity>
