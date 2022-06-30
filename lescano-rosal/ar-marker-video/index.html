@@ -39,7 +39,6 @@
         >
             <a-assets>
                 <video
-                    id="#vid"
                     response-type="arraybuffer"
                     loop
                     crossorigin
@@ -72,10 +71,12 @@
                     gesture-handler
                 ></a-video>
                 
+                </a-marker>
+            
                 <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/pattern-clover.patt"
+                url="assets/pattern-blckclover.patt"
                 videohandler
                 smooth="true"
                 smoothCount="10"
@@ -84,7 +85,7 @@
                 raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
+                id="markerB"
             >
                 <a-video
                     src="./assets/blackclover.mp4"
@@ -95,6 +96,7 @@
                     gesture-handler
                 ></a-video>
             </a-marker>
+                
 
             <a-entity camera></a-entity>
         </a-scene>
