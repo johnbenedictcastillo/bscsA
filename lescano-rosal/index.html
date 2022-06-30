@@ -1,10 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
 	<title>FLAETHER: 3DLUFFY</title>
-        	<script src="./js/aframe/aframe.min.js"></script>
-		<script src="./js/aframe/aframe-ar.js"></script>
-		<script src="./js/aframe/zingtouch.min.js"></script>
+        	<script src="./js/vendor/aframe.min.js"></script>
+		<script src="./js/vendor/aframe-ar.js"></script>
+		<script src="./js/vendor	/zingtouch.min.js"></script>
 
 		<script src="./js/3d-ops.js"></script>
 		<script src="./js/ar-cam.js"></script>
@@ -13,8 +12,7 @@
 		<!-- <script src="./js/debug.js"></script> -->
 
 		<link rel="stylesheet" href="./css/style.css">
-    </head>
-
+	
     <body style="margin: 0; overflow: hidden;">
 	<div class="overlay" id="fullscreen-overlay">
         <div class="lato">enter fullscreen</div>
@@ -77,29 +75,26 @@
             id="scene" 
 	    embedded arjs 
             vr-mode-ui="enabled: false"
-            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;"
-
-        >
+            renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true;">
             
             <a-marker
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
                 url="./assets/onepiece.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-		<a-entity position="0 0 0" rotation="270 0 0">
+                smooth="true">
+		    
+		<a-entity 
+			position="0 0 0" 
+			rotation="270 0 0">
                 <a-entity
                     id="bowser-model"
-                    position="0 -0.5 0" rotation="0 0 0" scale="12.5 12.5 12.5"
+                    position="0 -0.5 0" 
+		    rotation="0 0 0" scale="12.5 12.5 12.5"
                     animation-mixer="loop: repeat"
-                    gltf-model="./assets/luffy.glb"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
+                    gltf-model="./assets/luffy.glb">
+                      </a-entity>
+                </a-entity>
             </a-marker>
 
             <a-entity id="camera" camera></a-entity>
