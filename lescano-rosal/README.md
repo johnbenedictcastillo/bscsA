@@ -5,10 +5,18 @@ An Augmented Reality application for interaction with inanimate objects.
 ## Demo
 Link: [FLaether 3D LUFFY](https://johnbenedictcastillo.github.io/bscsA/lescano-rosal/)
 Tutorial:
-* Step1
-* Step2
+* Click the Link
+* Rotate phone to landscape
+* Allow camera
+* Refresh site if stuck
+* Scan the Marker
 
 Link: [Flaether OnePieceVideo](https://johnbenedictcastillo.github.io/bscsA/lescano-rosal/ar-marker-video)
+Tutorial:
+* Click the Link
+* Allow camera
+* Scan the marker
+* Video will play with sounds
 
 ## Project Description
 
