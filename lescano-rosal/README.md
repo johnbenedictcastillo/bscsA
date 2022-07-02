@@ -4,7 +4,7 @@ An Augmented Reality application for interaction with inanimate objects.
 
 ## Demo
 Link: bit.ly/flaether
-Link: bit.ly/aeOPvid
+Link: bit.ly/arOPvid
 
 ## Project Description
 
