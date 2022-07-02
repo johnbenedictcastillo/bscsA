@@ -2,6 +2,10 @@
 
 An Augmented Reality application for interaction with inanimate objects.
 
+## Demo
+Link: bit.ly/flaether
+Link: bit.ly/aeOPvid
+
 ## Project Description
 
 Inanimate objects are boring but we can make it fun. This project may cure your boredom as showing some funny filters, interactive avatars, videos and games using marker- based augmented reality system. A simple fun interaction may change the user’s mood.
