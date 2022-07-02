@@ -3,8 +3,9 @@
 An Augmented Reality application for interaction with inanimate objects.
 
 ## Demo
-Link: bit.ly/flaether
-Link: bit.ly/arOPvid
+Link: [FLaether 3D LUFFY] (bit.ly/flaether)
+
+Link: [Flaether OnePieceVideo] (bit.ly/arOPvid)
 
 ## Project Description
 
