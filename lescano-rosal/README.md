@@ -3,9 +3,9 @@
 An Augmented Reality application for interaction with inanimate objects.
 
 ## Demo
-Link: [FLaether 3D LUFFY] (bit.ly/flaether)
+Link: [FLaether 3D LUFFY] (https://johnbenedictcastillo.github.io/bscsA/lescano-rosal/))
 
-Link: [Flaether OnePieceVideo] (bit.ly/arOPvid)
+Link: [Flaether OnePieceVideo] (https://johnbenedictcastillo.github.io/bscsA/lescano-rosal/ar-marker-video)
 
 ## Project Description
 
