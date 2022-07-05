@@ -20,18 +20,26 @@
       gesture-detector
       id="scene"
     >
-        
-        </a-marker>
-        <a-marker dodecahedron type='pattern' url="marker/pattern-one.patt">
-              <a-dodecahedron
+     <a-assets>
+      <a-asset-item>
+        id="one"
+               <a-dodecahedron
                 position="0 0 0" 
                 scale="0.5 1.5 0.5"
                 radius="1.25" 
                 color="#14a115">
            </a-dodecahedron>
+        </a-asset-item>
+        </a-assets>
+       
+        <a-marker dodecahedron type='pattern' url="marker/pattern-one.patt">
+         <a-entity>
+                gltf-model="#one"
                 class="clickable"
                 gesture-handler
+       </a-entity>
         </a-marker>
+    
      <a-marker cone type='pattern' url="marker/pattern-two.patt">
               <a-cone
                 position="5 5 0" 
