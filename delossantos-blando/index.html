@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
+  <title>3D Shape Book Learning</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
-  <body style="margin : 0px; overflow: hidden;">
+  
+  <body>
     <a-scene
-      embedded
       arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+      embedded
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
       gesture-detector
       id="scene"
-      >
+    >
         
         </a-marker>
         <a-marker dodecahedron type='pattern' url="marker/pattern-one.patt">
