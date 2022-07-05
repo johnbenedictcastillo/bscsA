@@ -9,7 +9,7 @@ Tutorial:
 * Click the Link
 * Rotate phone to landscape
 * Allow camera
-* Refresh site if stuck
+* Refresh site if necessary
 * Scan the Marker
 
 Link: [Flaether OnePieceVideo](https://johnbenedictcastillo.github.io/bscsA/lescano-rosal/ar-marker-video)
