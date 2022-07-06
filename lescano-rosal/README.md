@@ -4,11 +4,6 @@ An Augmented Reality application for interaction with inanimate objects.
 
 ## Demo
 
-QR CODE: 
-
-![](QRcode-Flaether.png)
-
-
 Link: [FLaether 3D LUFFY](https://johnbenedictcastillo.github.io/bscsA/lescano-rosal/)
 
 Tutorial:
