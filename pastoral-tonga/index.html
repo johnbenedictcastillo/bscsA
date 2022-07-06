@@ -232,6 +232,116 @@
         },
       });
       //END OF BANGUS COMPONENTS//
+      
+            //SITAW COMPONENTS//
+        AFRAME.registerComponent("  adobongsitaw-event", {
+        init: function () {
+          console.log("init");
+          let adobongsitaw = $("#adobongsitaw");
+          let adobongsitawrecipe = $("#adobongsitawrecipe");
+          this.el.addEventListener(
+            "click",
+            function (e) {
+            if (adobongsitawrecipe.attr('visible') === false) {
+              adobongsitawrecipe.attr("visible", true);
+            } else {
+              adobongsitawrecipe.attr("visible", false);
+            }
+              console.log(adobongsitawrecipe.attr('visible'));
+            }.bind(this)
+          )
+        },
+      });
+      AFRAME.registerComponent("ginataangsitaw-event", {
+        init: function () {
+          console.log("init")
+          let ginataangsitaw = $("#ginataangsitaw")
+          let ginataangsitawrecipe = $("#ginataangsitawrecipe")
+          this.el.addEventListener(
+            "click",
+            function (e) {
+              if (ginataangsitawrecipe.attr('visible') === false) {
+                ginataangsitawrecipe.attr("visible", true);
+            } else {
+              ginataangsitawrecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      });
+
+      AFRAME.registerComponent("ginisangsitaw-event", {
+        init: function () {
+          console.log("init")
+          let ginisangsitaw = $("#ginisangsitaw")
+          let ginisangsitawrecipe = $("#ginisangsitawrecipe")
+          this.el.addEventListener(
+            "click",
+            function (e) {
+              if (ginisangsitawrecipe.attr('visible') === false) {
+                ginisangsitawrecipe.attr("visible", true);
+            } else {
+              ginisangsitawrecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      });
+
+     AFRAME.registerComponent("  adobongsitaw-event", {
+        init: function () {
+          console.log("init");
+          let adobongsitaw = $("#adobongsitaw");
+          let adobongsitawrecipe = $("#adobongsitawrecipe");
+          this.el.addEventListener(
+            "touch",
+            function (e) {
+            if (adobongsitawrecipe.attr('visible') === false) {
+              adobongsitawrecipe.attr("visible", true);
+            } else {
+              adobongsitawrecipe.attr("visible", false);
+            }
+              console.log(adobongsitawrecipe.attr('visible'));
+            }.bind(this)
+          )
+        },
+      });
+      AFRAME.registerComponent("ginataangsitaw-event", {
+        init: function () {
+          console.log("init")
+          let ginataangsitaw = $("#ginataangsitaw")
+          let ginataangsitawrecipe = $("#ginataangsitawrecipe")
+          this.el.addEventListener(
+            "touch",
+            function (e) {
+              if (ginataangsitawrecipe.attr('visible') === false) {
+                ginataangsitawrecipe.attr("visible", true);
+            } else {
+              ginataangsitawrecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      });
+
+      AFRAME.registerComponent("ginisangsitaw-event", {
+        init: function () {
+          console.log("init")
+          let ginisangsitaw = $("#ginisangsitaw")
+          let ginisangsitawrecipe = $("#ginisangsitawrecipe")
+          this.el.addEventListener(
+            "touch",
+            function (e) {
+              if (ginisangsitawrecipe.attr('visible') === false) {
+                ginisangsitawrecipe.attr("visible", true);
+            } else {
+              ginisangsitawrecipe.attr("visible", false);
+            }
+            }.bind(this)
+          )
+        },
+      });
+      // END OF SITAW COMPONENTS//
     </script>
 
     <a-scene embedded arjs>
@@ -239,11 +349,116 @@
         <img id="sunnyside" src="./assets/sunnysideup.jpg" />
         <img id="omellette" src="./assets/omellette.jpeg" />
         <img id="eggtoast" src="./assets/eggtoasts.jpg" />
-        <img id="sinigangnabangus" src="./assets/sinigangnabangus.jpg" />
-        <img id="sisigbangus" src="./assets/sisigbangus.jpg" />
-        <img id="paksiwnabangus" src="./assets/paksiwnabangus.jpg" />
+         <img id="sinigangnabangus" src="./assets/sinigangnabangus.jpg" />
+         <img id="sisigbangus" src="./assets/sisigbangus.jpg" />
+         <img id="paksiwnabangus" src="./assets/paksiwnabangus.jpg" />
+          <img id="adobongsitaw" src="./assets/adobongsitaw.jpg" />
+          <img id="ginataangsitaw" src="./assets/ginataangsitaw.jpg" />
+          <img id="ginisangsitaw" src="./assets/ginisangsitaw.jpg" />
       </a-assets>
 
+      <a-marker sitaw type="pattern" url="./patt/pattern-SITAW.patt">
+        <a-plane
+          adobongsitaw-event
+          src="#adobongsitaw"
+          position="-1 0 -1"
+          rotation="1 0 0"
+          scale="1 1 1"
+          look-at="[camera]"
+        ></a-plane>
+
+        <a-plane
+          ginataangsitaw-event
+          src="#ginataangsitaw"
+          position="0 0 -1"
+          scale="1 1 1"
+          look-at="[camera]"
+        ></a-plane>
+        
+        <a-plane
+          ginisangsitaw-event
+          src="#ginisangsitaw"
+          position="1 0 -1"
+          scale="1 1 1"
+          look-at="[camera]"
+        ></a-plane>
+        
+        <a-plane
+          look-at="[camera]"
+          position="1 1 1"
+          scale="1 1 1"
+          color="#FFB6C1"
+        >
+          <a-text
+            id="adobongsitawrecipe"
+            value="Heat a frying pan or wok then sear the pork.
+                   When oil and juice comes out of the pork, add garlic and onions then cook for 2 minutes.
+                   Pour-in the soy sauce, vinegar, and water then bring to a boil.
+                   Shake-in the ground black pepper and stir.
+                   Cover and simmer for 15 minutes or until the pork is tender.
+                   Add the string beans and cook for 3 to 5 minutes.
+                   Turn off the heat and transfer to a serving bowl.
+                   Serve hot with steamed rice."
+            position="1 1 1"
+            scale="0.7 0.7 0.7"
+            align="left"
+            color="white"
+            visible="false"
+            look-at="[camera]"
+          ></a-text>
+        </a-plane>
+
+        <a-plane
+          look-at="[camera]"
+          position="1 1 1"
+          scale="1 1 1"
+          color="#FFB6C1"
+        >
+          <a-text
+            id="ginataangsitawrecipe"
+            value="Heat oil in a pan. Add pork. Cook until brown and crispy.
+                   Sauté garlic, onion, and ginger.
+                   Once the onion softens, pour the coconut milk into the pan. Stir. Cover the pan and let the liquid boil. 
+                   Once boiling, adjust the heat to medium and continue boiling for 5 minutes.
+                   Add Knorr Pork Cube and squash. Continue cooking for 5 minutes.
+                   Add string beans. Cook for 5 to 8 minutes.
+                   Season with ground black pepper and fish sauce as needed.
+                   Transfer to a serving plate. Serve with warm rice."
+            position="1 1 1"
+            scale="0.7 0.7 0.7"
+            align="left"
+            color="blue"
+            visible="false"
+            look-at="[camera]"
+          ></a-text>
+        </a-plane>
+
+        <a-plane
+          look-at="[camera]"
+          position="1 1 1"
+          scale="1 1 1"
+          color="#FFB6C1"
+        >
+          <a-text
+            id="ginisangsitawrecipe"
+            value="Heat oil in a pan
+                   Sauté garlic, onion, and tomato.
+                   Add the ground pork. Cook until color turns medium brown (about 3 to 5 minutes)
+                   Add the fish sauce and sprinkle the ground black pepper. Stir.
+                   Put-in the string beans. Stir gently. Cover and cook in low to medium heat for 7 to 10 minutes.
+                   Remove the cover and stir to distribute the ingredients.
+                   Turn off heat. Transfer to a serving plate and enjoy!"
+            position="1 1 1"
+            scale="0.7 0.7 0.7"
+            align="left"
+            color="red"
+            visible="false"
+            look-at="[camera]"
+          ></a-text>
+        </a-plane>
+
+      </a-marker>
+      
       <a-marker egg type="pattern" url="./patt/pattern-goodegg-favicon.patt">
         <a-plane
           sunnyside-event
