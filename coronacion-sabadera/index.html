@@ -1,1 +1,62 @@
-a
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>LearnBodyOrgan</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>    
+  </head>
+
+  <body>
+    <a-scene
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      
+	     <a-assets>
+        <a-asset-item
+          id="brain"
+          src="./brain.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+      
+      <a-marker
+        type="pattern"
+        url="https://johnbenedictcastillo.github.io/bscsA/coronacio-sabadera/marker/pattern-brain.patt"
+      >
+    
+    <a-entity id="entity" look-at="[camera]">
+      <a-entity
+          gltf-model="#brain" 
+          scale="0.001 0.001 0.001" 
+          position = "0 0 0" 
+	  rotation = "0 -90 0"
+        >
+        </a-entity>
+
+	 <a-entity
+          id="brain-model"
+          gltf-model="#brain"
+          position="0 0 1.2"
+          scale="0.005 0.005 0.005"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker>
+      
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
