@@ -31,20 +31,24 @@
         </a-asset-item>
       </a-assets>
       
+         <a-assets>
+        <a-asset-item
+          id="heart"
+          src="./asset/heart.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+      
+	        
       <a-marker
         type="pattern"
         url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-brain.patt"
       >
-    
+     <a-marker
+        type="pattern"
+        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-heart.patt"
+      > 
     <a-entity id="entity" look-at="[camera]">
-      <a-entity
-          gltf-model="#brain" 
-          scale="0.001 0.001 0.001" 
-          position = "0 0 0" 
-	  rotation = "0 -90 0"
-        >
-        </a-entity>
-
 	 <a-entity
           id="brain-model"
           gltf-model="#brain"
