@@ -40,6 +40,18 @@
           src="./asset/heart.glb"
         >
         </a-asset-item>
+	
+	<a-asset-item
+          id="lungs"
+          src="./asset/lungs.glb"
+        >
+        </a-asset-item>
+				 
+	<a-asset-item
+          id="kidney"
+          src="./asset/kidney.glb"
+        >
+        </a-asset-item>
       </a-assets>
       
      <a-marker
@@ -84,6 +96,56 @@
         </a-entity>
        </a-entity>
         <a-entity text-geometry="value: HEART; font: #exoFont;"
+	material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
+	rotation="-90 0 0">
+	</a-entity>
+         <a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90">
+	</a-plane>
+	<a-text value="Heart" font="./fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>														     
+      </a-marker> 
+														     
+      <a-marker
+        type="pattern"
+        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-lungs.patt"
+      >
+    
+    <a-entity id="entity" look-at="[camera]">
+	 <a-entity
+          id="lungs-model"
+          gltf-model="#lungs"
+          position="0 0 0"
+          scale="0.5 0.5 0.5"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+       </a-entity>
+        <a-entity text-geometry="value: LUNGS; font: #exoFont;"
+	material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
+	rotation="-90 0 0">
+	</a-entity>
+         <a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90">
+	</a-plane>
+	<a-text value="Heart" font="./fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>														     
+      </a-marker> 
+														     
+      <a-marker
+        type="pattern"
+        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-kidney.patt"
+      >
+    
+    <a-entity id="entity" look-at="[camera]">
+	 <a-entity
+          id="kidney-model"
+          gltf-model="#kidney"
+          position="0 0 0"
+          scale="0.5 0.5 0.5"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+       </a-entity>
+        <a-entity text-geometry="value: KIDNEY; font: #exoFont;"
 	material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
 	rotation="-90 0 0">
 	</a-entity>
