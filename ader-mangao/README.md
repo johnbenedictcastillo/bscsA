@@ -1,25 +1,13 @@
-TITLE :  AN A.R APPLICATION TO VIEW CAN BE PLACED INSIDE A NEW HOME USING A PHONE SCREEN
+ArtiMaSc: An Augmented Reality application to view some of the famous artworks using WebAr   	
 
 
-a.)	Project Description.
+a.	Project Description - This project scans a variety of works by famous artists using Marker-based AR, and can provide visuals of 2-3 art work, as well as the description of each image.
 
 
-	Most people who renovate their homes pay for interior designer for the good design of their home, so I made an A.R Application so they don't have to pay for interior designer because they themselves can choose what they want to designer inside their home.
+b.	Market Analysis - This project targets people who love the arts and those who want to know who the famous art works.
 
 
-b.)	 Market Analysis.
+c.	Technical Specification - We will use GitHub in our project to make WebAr. Therefore, it takes us up until the very last second.
 
 
-	The project targets those with new homes, people who renovate their homes, can also be interior designers so they don't have to think about what they're signing.
-
-
-c.)	Technical Specification.
-
-
-	You will choose the type of house design you want after viewing the various options in this program application. After selecting a design, you can change any object with one that suits into your preferences.
-
-
-d.)	 Risk Analysis.
-
-
-	Maybe the only problem with my A.R Application would be if the designs that would be shown on their cellphone screens wouldn't be liked.
+d.	Risk Analysis wouldn’t be liked - This project can only show 2-3 different types of artworks and this project can only scan a limited image 
