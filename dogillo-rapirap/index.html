@@ -11,21 +11,19 @@
   <a-scene embedded arjs
     gesture-detector
   >
-    <a-marker scroll type='pattern' url='patt/scroll.patt'>
-        
+  	<a-marker scroll type='pattern' url='patt/scroll.patt'>
 		<a-box
 	 	src= "https://raw.githubusercontent.com/johnbenedictcastillo/bscsA/main/dogillo-rapirap/assets/scroll-png-115540265464erxrbg1fn.png"
 		gesture-handler
-
 		<!---look-at="[camera]"--->
 		></a-box>
-	  <a-plane
-		   src= "https://github.com/johnbenedictcastillo/bscsA/blob/main/dogillo-rapirap/assets/trex1.jpg?raw=true"
+	</a-marker>
+	<a-marker barney type='pattern' url='patt/pattern-trex1.patt'>
+	   <a-plane
+		   src= "https://raw.githubusercontent.com/johnbenedictcastillo/bscsA/main/dogillo-rapirap/assets/trex1.jpg"
 		   gesture-handler
 		   ></a-plane>
-	  
-		
-</a-marker>
+	</a-marker>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
