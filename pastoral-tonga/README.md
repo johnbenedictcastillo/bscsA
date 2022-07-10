@@ -17,6 +17,7 @@
     * This project only can scan limited image of raw food dishes.
     
 * Describe the possible solutions 
+    * This project can use buttons in order to show description of each dishes.
     *
 * Evaluation Criteria
     * 
