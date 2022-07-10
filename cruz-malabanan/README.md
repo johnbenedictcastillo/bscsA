@@ -1,5 +1,4 @@
 **AR CARD: An Augmented Reality invitation Card using AR.js**
-![qrcode_25539450_](https://user-images.githubusercontent.com/106570017/178135061-ca934920-a288-4970-bb25-96b28ae03961.png)
 
 **✓Product Description** 
 
