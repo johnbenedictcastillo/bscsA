@@ -22,14 +22,13 @@
       vr-mode-ui="enabled: false"
       gesture-detector
       id="scene"
-    >
-      <a-assets>
-	<a-asset-item id="exoFont" src="./fonts/exoBlack.typeface.json"></a-asset-item>
-	<img id="pixels" src="./images/pixels.png" />
-	</a-assets>
-			
+    >		
 	<a-assets>
-        <a-asset-item
+	
+	<a-asset-item id="exoFont" src="./fonts/exoBlackItalic.typeface.json"></a-asset-item>
+	<img id="pixels" src="./images/pixels.png">
+        
+	<a-asset-item
           id="brain"
           src="./asset/Brain.glb"
         >
@@ -58,8 +57,6 @@
         type="pattern"
         url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-brain.patt"
       >
-    
-    <a-entity id="entity" look-at="[camera]">
 	 <a-entity
           id="brain-model"
           gltf-model="#brain"
@@ -69,11 +66,12 @@
           gesture-handler
         >
         </a-entity>
-       </a-entity>
+			   
 	<a-entity text-geometry="value: BRAIN; font: #exoFont;"
 	material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
-	rotation="-90 0 0" position="0 0 0">
+	rotation="0 0 0" position="0 0 0">
 	</a-entity>
+					 
 	<a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90">
         </a-plane>
 	<a-text value="Brain" font="./fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>														    
