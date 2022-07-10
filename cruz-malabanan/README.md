@@ -1,4 +1,4 @@
-AR CARD: An Augmented Reality invitation Card using AR.js
+**AR CARD: An Augmented Reality invitation Card using AR.js** 
 
 ✓Product Description
 
@@ -25,3 +25,4 @@ DEPLOYMENT(July 3-4) and the last step is MAINTENANCE(July 5-10).
 
 •This project shows simple 3D models only and required a lot of 
 time to make it realistic
+
