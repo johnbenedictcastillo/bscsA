@@ -1,52 +1,101 @@
 <!doctype HTML>
 <html>
+<head>
+<title>Wedding Invitation Card</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<script src="js/aframe.min.js"></script>
-<script src="js/aframe-ar.js"></script>
-
-<!-- support 3D text -->
-<script src="js/aframe-text-geometry-component.min.js"></script>
-
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="gesture-detector.js"></script>
+<script src="gesture-handler.js"></script>    
+</head>
+	
 <body style="margin: 0px; overflow: hidden;">
 
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
-
+    <a-scene
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+	    
 	<a-assets>
-		<a-asset-item id="exoFont" src="fonts/exoBlackItalic.typeface.json"></a-asset-item>
-		<img id="pixels" src="images/pixels.png" />
+        <a-asset-item
+          id="Brain"
+          src="./asset/Brain.glb"
+        >
+        </a-asset-item>
+	
+	<a-asset-item
+          id="Heart"
+          src="./asset/heart.glb"
+        >
+        </a-asset-item>
+	
+	<a-asset-item
+          id="Kidney"
+          src="./asset/Kidney.glb"
+        >
+        </a-asset-item>
+		
+	<a-asset-item
+          id="Lungs"
+          src="./asset/Lungs.glb"
+        >
+        </a-asset-item>
+		
 	</a-assets>
-
-	<!-- 2D text -->
-	<a-marker type="pattern" url="marker/pattern-brain.patt">
-		
-		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
-		<a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90"></a-plane>
-
-		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>
-		
-		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
-		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
-
-		
-		<!-- avoiding z-fighting is difficult; may want to render canvas to text instead -->
-
-	</a-marker>
-
-	<!-- 3D text -->
-	<a-marker type="pattern" url="marker/pattern-kidneys.patt">
-
-		<!-- 
-			using aframe-text-geometry component
-			can set: bevelSize, bevelThickness, curveSegments, font, height, size, style, value.
-			alignment (centering) may be tricky; try calculating bounding box and repositioning.
-			for more info, see: https://www.npmjs.com/package/aframe-text-geometry-component
-		 -->
-		<a-entity text-geometry="value: Hello, world!; font: #exoFont;"
-			material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
-			rotation="-90 0 0">
+	    
+	<a-marker type="pattern" url="./marker/pattern-brain.patt">
+		<a-entity
+		  id="brain-model"
+		  gltf-model="#Brain"
+		  position="0 0 0"
+		  scale="0.5 0.5 0.5"
+		  class="clickable"
+		  gesture-handler
+		>
 		</a-entity>
-
+	</a-marker>
+	
+	<a-marker type="pattern" url="./marker/pattern-heart.patt">			
+		<a-entity
+		  id="heart-model"
+		  gltf-model="#Heart"
+		  position="0 0 0"
+		  scale="0.2 0.2 0.2"
+		  class="clickable"
+		  gesture-handler
+		>
+		</a-entity>
+	</a-marker>
+	    
+	<a-marker type="pattern" url="./marker/pattern-kidneys.patt">
+		<a-entity
+		  id="kidney-model"
+		  gltf-model="#Kidney"
+		  position="0 0 0"
+		  scale="0.2 0.2 0.2"
+		  class="clickable"
+		  gesture-handler
+		>
+		</a-entity>
+	</a-marker>
+	 
+	<a-marker type="pattern" url="./marker/pattern-lungs.patt">
+		<a-entity
+		  id="lungs-model"
+		  gltf-model="#Lungs"
+		  position="0 0 0"
+		  scale="0.2 0.2 0.2"
+		  class="clickable"
+		  gesture-handler
+		>
+		</a-entity>
 	</a-marker>
 
     <a-entity camera></a-entity>
