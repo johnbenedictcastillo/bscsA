@@ -1,123 +1,56 @@
-<!DOCTYPE html>
-
+<!doctype HTML>
 <html>
-  <head>
-    <title>LearnBodyOrgan</title>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="gesture-detector.js"></script>
-    <script src="gesture-handler.js"></script> 
-  </head>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"></script>
 
-  <body style="margin: 0px; overflow: hidden;">
-    <a-scene
-      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-      embedded
-      renderer="logarithmicDepthBuffer: true;"
-      vr-mode-ui="enabled: false"
-      gesture-detector
-      id="scene"
-    >		
+<!-- support 3D text -->
+<script src="js/aframe-text-geometry-component.min.js"></script>
+
+<body style="margin: 0px; overflow: hidden;">
+
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+
 	<a-assets>
-	<a-asset-item
-          id="brain"
-          src="./asset/Brain.glb"
-        >
-        </a-asset-item>
-      
-      <a-asset-item
-          id="heart"
-          src="./asset/heart.glb"
-        >
-        </a-asset-item>
-	
-	<a-asset-item
-          id="lungs"
-          src="./asset/Lungs.glb"
-        >
-        </a-asset-item>
-				 
-	<a-asset-item
-          id="kidney"
-          src="./asset/Kidney.glb"
-        >
-        </a-asset-item>
-      </a-assets>
-      
-     <a-marker
-        type="pattern"
-        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-brain.patt"
-      > 
-	<a-plane color="white" rotation="0 0 0" position="0 0 0" width="3" material="transparent: true; opacity: 0.90">
-	</a-plane>
-	     
-	<a-text value="Brain JAHFALJFJFKNKSVLHSVNANVAVNAKVNKSAVNSKNVK" font="./fonts/Exo2Bold.fnt" color="red" rotation="0 0 0" position="0 0 0" scale="2 2 2"></a-text>														    
-        
-	</a-marker> 
-	    
-	<a-marker
-        type="pattern"
-        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-heart.patt"
-      >
-	 <a-entity
-          id="heart-model"
-          gltf-model="#heart"
-          position="0 0 0"
-          scale="1 1 1"
-          class="clickable"
-          gesture-handler
-        >
-        </a-entity>
-        
-	<a-plane color="white" rotation="0 0 0" position="0 0 -2" width="3" material="transparent: true; opacity: 0.90">
-	</a-plane>
-		
-	<a-text value="Heart" font="./fonts/Exo2Bold.fnt" color="red" rotation="0 0 0" align="center" scale="2 2 2"></a-text>														     
-      	</a-marker> 
-														     
-      <a-marker
-        type="pattern"
-        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-lungs.patt"
-      >
-	 <a-entity
-          id="lungs-model"
-          gltf-model="#lungs"
-          position="0 0 0"
-          scale="1 1 1"
-          class="clickable"
-          gesture-handler
-        >
-        </a-entity>
-	      
-         <a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90">
-	</a-plane>
-	      
-	<a-text value="Heart" font="./fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>														     
-      </a-marker> 
-														     
-      <a-marker
-        type="pattern"
-        url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-kidneys.patt"
-      >
-	 <a-entity
-          id="kidney-model"
-          gltf-model="#kidney"
-          position="0 0 0"
-          scale="0.2 0.2 0.2"
-          class="clickable"
-          gesture-handler
-        >
-        </a-entity>
+		<a-asset-item id="exoFont" src="fonts/exoBlackItalic.typeface.json"></a-asset-item>
+		<img id="pixels" src="images/pixels.png" />
+	</a-assets>
 
-         <a-plane color="white" rotation="-90 0 0" position="0 0 -2" width="3" material="transparent: true; opacity: 0.90">
-	</a-plane>
-	      
-	<a-text value="Heart" font="./fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>														     
-      </a-marker> 
-      
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+	<!-- 2D text -->
+	<a-marker type="pattern" url="marker/pattern-brain.patt">
+		
+		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
+		<a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90"></a-plane>
+
+		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
+		<a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>
+		
+		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
+		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
+
+		
+		<!-- avoiding z-fighting is difficult; may want to render canvas to text instead -->
+
+	</a-marker>
+
+	<!-- 3D text -->
+	<a-marker type="pattern" url="marker/pattern-kidneys.patt">
+
+		<!-- 
+			using aframe-text-geometry component
+			can set: bevelSize, bevelThickness, curveSegments, font, height, size, style, value.
+			alignment (centering) may be tricky; try calculating bounding box and repositioning.
+			for more info, see: https://www.npmjs.com/package/aframe-text-geometry-component
+		 -->
+		<a-entity text-geometry="value: Hello, world!; font: #exoFont;"
+			material="color: yellow; src: #pixels; repeat: 0.5 0.5;" 
+			rotation="-90 0 0">
+		</a-entity>
+
+	</a-marker>
+
+    <a-entity camera></a-entity>
+    
+</a-scene>
+</body>
 </html>
