@@ -10,7 +10,8 @@
 
 •Allow camera
 
-•[Scan this marker](https://user-images.githubusercontent.com/106570017/178229511-bcbb941a-c904-4bd4-ad94-e5dcd3b87dc3.png)
+•[Scan this marker](https://user-images.githubusercontent.com/106570017/178280223-3edd4bf9-34f9-43e9-b583-046c209ff356.png)
+
 
 
 
