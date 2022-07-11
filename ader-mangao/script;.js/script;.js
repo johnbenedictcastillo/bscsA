@@ -1,8 +1,8 @@
       //EGGS COMPONENTS//
-      AFRAME.registerComponent("Girl with a pearl earring-event", {
+      AFRAME.registerComponent("GirlWithAPearlEarring-event", {
         init: function () {
           console.log("init");
-          let Girl with a pearl earring = $("#Girl with a pearl earring");
+          let Girl with a pearl earring = $("#GirlWithAPearlEarring");
           let JohannesVermeerBibliography = $("#JohannesVermeerBibliography ");
           this.el.addEventListener(
             "click",
@@ -29,12 +29,12 @@
         },
       });
       
-      //Leonardo da Vinci COMPONENTS//
-       AFRAME.registerComponent("Mona Lisa-event", {
+      //LeonardodaVinci COMPONENTS//
+       AFRAME.registerComponent("MonaLisa-event", {
         init: function () {
           console.log("init");
-          let sinigangnabangus = $("#Mona Lisa");
-          let sinigangnabangusrecipe = $("#LeonardodaVinciBibliography");
+          let MonaLisa= $("#Mona Lisa");
+          let LeonardodaVinciBibliography = $("#LeonardodaVinciBibliography");
           this.el.addEventListener(
             "click",
             function (e) {
@@ -60,32 +60,32 @@
         },
       });
 
-            //Vincent Van Gough COMPONENTS//
-        AFRAME.registerComponent("The Starry Night-event", {
+            //VincentVanGogh COMPONENTS//
+        AFRAME.registerComponent("TheStarryNight-event", {
         init: function () {
           console.log("init");
-          let The Starry Night- = $("#The Starry Night-");
-          let VincentVanGoughBibliography = $("#VincentVanGoughBibliography");
+          let TheStarryNight- = $("#TheStarryNight-");
+          let VincentVanGoghBibliography = $("#VincentVanGoghBibliography");
           this.el.addEventListener(
             "click",
             function (e) {
-            if (VincentVanGoughBibliography.attr('visible') === false) {
-              VincentVanGoughBibliography.attr("visible", true);
+            if (VincentVanGoghBibliography.attr('visible') === false) {
+              VincentVanGoghBibliography.attr("visible", true);
             } else {
-              VincentVanGoughBibliography.attr("visible", false);
+              VincentVanGoghBibliography.attr("visible", false);
             }
-              console.log(VincentVanGoughBibliography.attr('visible'));
+              console.log(VincentVanGoghBibliography.attr('visible'));
             }.bind(this)
           )
           this.el.addEventListener(
             "touch",
             function (e) {
-            if (VincentVanGoughBibliography.attr('visible') === false) {
-              VincentVanGoughBibliography.attr("visible", true);
+            if (VincentVanGoghBibliography.attr('visible') === false) {
+              VincentVanGoghBibliography.attr("visible", true);
             } else {
-              VincentVanGoughBibliography.attr("visible", false);
+              VincentVanGoghBibliography.attr("visible", false);
             }
-              console.log(VincentVanGoughBibliography.attr('visible'));
+              console.log(VincentVanGoghBibliography.attr('visible'));
             }.bind(this)
           )
         },
