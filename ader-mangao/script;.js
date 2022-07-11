@@ -1,5 +1,5 @@
       //JohannesVeremeer COMPONENTS//
-      AFRAME.registerComponent("GirlWithAPearlEarring-event", {
+      AFRAME.registerComponent("gwpe-event", {
         init: function () {
           console.log("init");
           let JohannesVermeerBibliography = $("#JohannesVermeerBibliography ");
