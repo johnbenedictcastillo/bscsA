@@ -26,11 +26,11 @@
 
 >*Low-cost upgrade* - Cheapest upgrade as possible.
 
->*Internet* – must be 3mbps minimum connection
+>*Internet* – must require 25Mbps upwards on a contact basis for smooth experience, guaranteed to keep up with any new VR developments.
 
->*Maintainability* – must be easy to maintain
+>*Maintainability* – must be easy to evaluate it is important to reduce maintenance cost and improve availability, mainly used to simulate the impact on maintenance operation space.
 
->*Effectivity* – must be effective and working, effect is significantly noticeable
+>*Effectivity* – must determines whether the task can be performed at a practical interval that will either reduce the probability of failure to an acceptable level. And also, the effect must be significantly noticeable.
 
 **Propose with the Feasible Solution:**
 
@@ -40,3 +40,6 @@
 
 >We conclude that our project can help significantly to those who have unclear sight, they can really zoom in to details. In general, it can help us see the details more clearly and give insight faster than regularly asking the teacher for it. 
 
+internet – must require 25Mbps upwards on a contact basis for smooth experience, guaranteed to keep up with any new VR developments.
+maintainability – must be easy to evaluate it is important to reduce maintenance cost and improve availability, mainly used to simulate the impact on maintenance operation space.
+effectiveness – must determines whether the task can be performed at a practical interval that will either reduce the probability of failure to an acceptable level.
