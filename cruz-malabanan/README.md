@@ -1,6 +1,6 @@
 <h1 align="center">AR CARD: An Augmented Reality invitation Card using AR.js </h1>
 
-Align="center">![invitation small](https://user-images.githubusercontent.com/106570017/178324511-52598255-7d11-4a36-a4f1-5db55a2d0282.jpg)
+align="center">![invitation small](https://user-images.githubusercontent.com/106570017/178324511-52598255-7d11-4a36-a4f1-5db55a2d0282.jpg)
 
 
 ## Tutorial
