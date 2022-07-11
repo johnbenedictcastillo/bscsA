@@ -1,5 +1,6 @@
 <h1 align="center">AR CARD: An Augmented Reality invitation Card using AR.js </h1>
 
+![QR CODE](https://user-images.githubusercontent.com/106570017/178169833-40bda642-a014-4a91-bae6-cc6f2eb01859.png)
 
 
 **✓Product Description** 
