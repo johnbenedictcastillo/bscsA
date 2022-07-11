@@ -6,23 +6,23 @@
           this.el.addEventListener(
             "click",
             function (e) {
-            if (JohannesVermeerBibliography .attr('visible') === false) {
-              JohannesVermeerBibliography attr("visible", true);
+            if (JohannesVermeerBibliography.attr('visible') === false) {
+              JohannesVermeerBibliography.attr("visible", true);
             } else {
-              JohannesVermeerBibliography .attr("visible", false);
+              JohannesVermeerBibliography.attr("visible", false);
             }
-              console.log(JohannesVermeerBibliography attr('visible'));
+              console.log(JohannesVermeerBibliography.attr('visible'));
             }.bind(this)
             )
             this.el.addEventListener(
                 "touch",
                 function (e) {
-                if (JohannesVermeerBibliography .attr('visible') === false) {
-                  JohannesVermeerBibliography .attr("visible", true);
+                if (JohannesVermeerBibliography.attr('visible') === false) {
+                  JohannesVermeerBibliography.attr("visible", true);
                 } else {
-               JohannesVermeerBibliography .attr("visible", false);
+               JohannesVermeerBibliography.attr("visible", false);
                 }
-                  console.log(JohannesVermeerBibliography .attr('visible'));
+                  console.log(JohannesVermeerBibliography.attr('visible'));
                 }.bind(this)
               )
         },
