@@ -1,4 +1,5 @@
-**AR CARD: An Augmented Reality invitation Card using AR.js**
+<h1 align="center">AR CARD: An Augmented Reality invitation Card using AR.js </h1>
+
 
 
 **✓Product Description** 
