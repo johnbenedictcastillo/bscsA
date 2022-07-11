@@ -2,7 +2,7 @@
       AFRAME.registerComponent("gwpe-event", {
         init: function () {
           console.log("init");
-          let JohannesVermeerBibliography = $("#JohannesVermeerBibliography ");
+          let JohannesVermeerBibliography = $("#JohannesVermeerBibliography");
           this.el.addEventListener(
             "click",
             function (e) {
