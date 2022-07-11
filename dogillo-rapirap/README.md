@@ -18,4 +18,27 @@
 	
 >The basic problems that we might encounter are no internet access or poor internet connection, failed to scan the photo due to the camera itself of the user.
 
+**Describe the possible solutions:**
+
+>Installation of more modem for wider connectivity in the premises or avail a data subscription. Invest in a better phone with better camera or clean the lenses properly.
+
+**Evaluation Criteria:**
+
+>*Low-cost upgrade* - Cheapest upgrade as possible.
+
+>*Effectivity* - The effect is significantly noticeable.
+
+>*Internet* – must be 3mbps minimum connection
+
+>*Maintainability* – must be easy to maintain
+
+>*Effectiveness* – must be effective and working
+
+**Propose with the Feasible Solution:**
+
+>Modem can cost around 2000 pesos, it allows us to have a wider coverage of internet connection, and it can handle more users.
+
+**Conclusion:**
+
+>We conclude that our project can help significantly to those who have unclear sight, they can really zoom in to details. In general, it can help us see the details more clearly and give insight faster than regularly asking the teacher for it. 
 
