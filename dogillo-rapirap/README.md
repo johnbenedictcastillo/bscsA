@@ -26,13 +26,11 @@
 
 >*Low-cost upgrade* - Cheapest upgrade as possible.
 
->*Effectivity* - The effect is significantly noticeable.
-
 >*Internet* – must be 3mbps minimum connection
 
 >*Maintainability* – must be easy to maintain
 
->*Effectiveness* – must be effective and working
+>*Effectivity* – must be effective and working, effect is significantly noticeable
 
 **Propose with the Feasible Solution:**
 
