@@ -39,7 +39,3 @@
 **Conclusion:**
 
 >We conclude that our project can help significantly to those who have unclear sight, they can really zoom in to details. In general, it can help us see the details more clearly and give insight faster than regularly asking the teacher for it. 
-
-internet – must require 25Mbps upwards on a contact basis for smooth experience, guaranteed to keep up with any new VR developments.
-maintainability – must be easy to evaluate it is important to reduce maintenance cost and improve availability, mainly used to simulate the impact on maintenance operation space.
-effectiveness – must determines whether the task can be performed at a practical interval that will either reduce the probability of failure to an acceptable level.
