@@ -11,7 +11,7 @@ Link or Scan the QR Code below:
 
 •Scan the Marker
 
-## LINK [Wedding Invitation](https://johnbenedictcastillo.github.io/bscsA/cruz-malabanan/)
+## LINK: [Wedding Invitation](https://johnbenedictcastillo.github.io/bscsA/cruz-malabanan/)
 
 ![QR CODE](https://user-images.githubusercontent.com/106570017/178169833-40bda642-a014-4a91-bae6-cc6f2eb01859.png)
 
