@@ -3,7 +3,7 @@
 ![QR CODE](https://user-images.githubusercontent.com/106570017/178169833-40bda642-a014-4a91-bae6-cc6f2eb01859.png)
 
 
-##**✓Product Description** 
+##Product Description 
 
 •These apps are for invitation cards like birthdays, 
 Christening and Wedding or any events. This will help the invitees to encourage
