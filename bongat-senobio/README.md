@@ -49,4 +49,6 @@ The lack of 3d assets which would depict the products accurately would be proble
 
 The FurniShop AR was made to provide a convenient purchasing experience for potential customers of furniture with a 3d experience. The lack of 3d assets will not be a problem anymore. FurniShop utilizes different 3d sources and integrates GL Transmission Format Binary File (glb) assets. In addition, FurniShop has its manual to make it easier for customers who are new to using this kind of feature. It was built with buttons to manipulate 3d models using the camera quickly. The following buttons below are created with different functions:
 
+##### View in AR button - to access the product viewer.
+
 
