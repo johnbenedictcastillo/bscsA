@@ -44,17 +44,20 @@
         </a-asset-item>
 		   
 	<a-marker type="pattern" url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-brain.patt">
-		<a-entity
-		  gltf-model="#Brain"
-		  position="0 0 -1.2"
-		  scale="0.2 0.2 0.2"
-		>
-		</a-entity>
+		
+		<a-entity id="entity" look-at="[camera]">
 		
 		<a-entity
 		  gltf-model="#Lungs"
 		  position="0 0 0"
-		  scale="0.1 0.1 0.1"
+		  scale="0.5 0.5 0.5"
+		>
+		</a-entity>
+			
+		<a-entity
+		  gltf-model="#Brain"
+		  position="0 0 -1.2"
+		  scale="0.2 0.2 0.2"
 		>
 		</a-entity>
 		
@@ -71,7 +74,7 @@
 		  scale="0.005 0.005 0.005"
 		>
 		</a-entity>
-		
+		</a-entity>
 	</a-marker>
 
     <a-entity camera></a-entity>
