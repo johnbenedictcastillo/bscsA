@@ -11,4 +11,52 @@ Escapade will be created using Unity App which will bring our game into reality.
 Risk Analysis
 The game may be unsuited to other devices which can be a problem to the user. We developers are prepared to fix the inconvenience service of our game to the future users.
 
+a. Other device operating system versions are not coa.Otherble with our application.
+
+b. Other devices may not be able to run the application because of low hardware specification.
+
+c. The target users mostly prefer to use mobile phones (Android/IOS) than laptop or desktop yet this game is only functionable at windows computers.
+
+
+Describe the possible solution
+
+-System that would lessen the target users' boredom.
+
+-System that will make them want to go outside and make playing this virtual reality game more enjoyable for them.
+
+-The system needs to be reprogrammed to support Android and iOS.
+
+Evaluation Criteria
+
+We have set several criteria that we are going to use in evaluating our proposed application. This evaluation will help us to determine the pros and cons of this project. This will also help us to evaluate our proposed resolution if it meets the needs we have listed under the risk analysis. This will also ensure that we are going to meet the necessity and relevance of this project.
+
+A. Compatibility
+
+To ensure that it will be available to most platforms being used by the target users.
+
+B. User friendliness.
+
+To ensure that the game would be easy to understand and play by the target users.
+
+C. Ease of use.
+
+To ensure that the technicality and objectives of the game will be clear and can be easily comprehended by the target users.
+
+D. Effectivity of our system features like, but not limited to:
+
+1. Replayability.
+
+2. Enjoyability.
+
+3. Realism.
+
+4. Knowledge based Learning thru game challenges and mission.
+
+Propose with the Feasible Solution
+
+By looking at a few potential solutions, we, the researchers, believe that the system must be usable or applicable to Android and/or iOS so that it will be more convenient for them to play and enjoy themselves. The goal of this system is to develop a user-friendly virtual reality game that will help the target users avoid boredom. To make sure that this game would be both educational and entertaining, it also included a number of missions or challenges.
+
+Conclusion
+
+The aim of this study is to create a simulation game designed with VR technology where in end users can experience the real world using computer/laptops. We conclude that the effectivity of this game will be based on how fun or entertaining the game can be. The game should be interactive and responsive with how the end user will play. The features of this game must meet the needs of the end users. The interface and design of the game should catch the attention of the user.
 
