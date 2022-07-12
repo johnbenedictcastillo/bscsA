@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="styles.css">
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="gesture-detector.js"></script>
+<script src="gesture-handler.js"></script>
 </head>
 	
 <body style="margin: 0px; overflow: hidden;">
@@ -16,6 +19,7 @@
       embedded
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
+      gesture-detector
       id="scene"
     >
 	    
@@ -50,6 +54,8 @@
 		  position="-0.4 0 -0.6"
 		  scale="0.002 0.002 0.002"
 		  rotation= "-180 0 0"
+		  class="clickable"
+          	  gesture-handler
 		>
 		</a-entity>
 		
@@ -58,14 +64,18 @@
 		  position="0 0 -1.2"
 		  scale="0.3 0.3 0.3"
 		  rotation= "-90 0 0"
+	          class="clickable"
+          	  gesture-handler
 		>
 		</a-entity>
 		
 		<a-entity
 		  gltf-model="#Heart"
-		  position="0 0.2 0"
+		  position="0 1 0"
 		  scale="1.5 1.5 1.5"
 		  rotation= "-180 0 0"
+	          class="clickable"
+            	  gesture-handler
 		>
 		</a-entity>
 		
@@ -74,6 +84,8 @@
 		  position="0 0 3.5"
 		  scale="0.005 0.005 0.005"
 		  rotation= "-180 0 0"
+	          class="clickable"
+          	  gesture-handler
 		>
 		</a-entity>
 
