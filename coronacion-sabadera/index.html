@@ -7,9 +7,6 @@
 <link rel="stylesheet" href="styles.css">
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-<script src="gesture-detector.js"></script>
-<script src="gesture-handler.js"></script>    
 </head>
 	
 <body style="margin: 0px; overflow: hidden;">
@@ -81,14 +78,13 @@
 	</a-marker>
 	 
 	<a-marker type="pattern" url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-heart.patt">
-		<a-entity
-		  gltf-model="#Lungs"
-		  position="0 0 0"
-		  scale="0.5 0.5 0.5"
-		  class="clickable"
-		  gesture-handler 
-		>
-		</a-entity>
+	 	 <a-sphere 
+			position="0 0 0" 
+			scale="1 1 1"
+			radius="1.25" 
+			rotation="10 43 45"
+			color="#00BDFE">
+                </a-sphere>
 	</a-marker>
 
     <a-entity camera></a-entity>
