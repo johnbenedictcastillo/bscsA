@@ -110,4 +110,4 @@ This project aims to develop a product viewer that will address the product misc
 ## Page and User Manual
 [Page via Vercel](https://bscs-a.vercel.app/bongat-senobio/index.html).
 
-[User Manual PDF](https://bscs-a.vercel.app/bongat-senobio/FurniShop AR_User_Manual.pdf).
+[User Manual PDF](https://bscs-a.vercel.app/bongat-senobio/FurniShop%20AR_User_Manual.pdf).
