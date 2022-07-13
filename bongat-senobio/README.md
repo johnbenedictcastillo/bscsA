@@ -107,4 +107,6 @@ As a result of this project, developing the augmented reality product viewer wil
 
 This project aims to develop a product viewer that will address the product misconceptions, negative feedback, and negative buying experience that affects both the customers and seller. The product development considered the four criteria: relevance, effectiveness and accuracy, user experience, navigation and design, cost, and maintainability. These criteria are utilized to determine which product viewer will most effectively address furniture online selling problems. Also, this was to improve the technological and economic aspect of promoting local furniture brands. This project concluded that Augmented Reality Furniture Product Viewer is the most feasible solution that will significantly impact promoting and selling local furniture products by accessing its factor when it comes to its relevance, effectiveness and accuracy, user experience, navigation and design, cost, and maintainability.
 
-
+## Page and User Manual
+[Page via Vercel](https://bscs-a.vercel.app/bongat-senobio/index.html).
+[User Manual PDF](https://bscs-a.vercel.app/bongat-senobio/FurniShop AR_User_Manual.pdf).
