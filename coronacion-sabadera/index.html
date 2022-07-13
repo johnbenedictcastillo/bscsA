@@ -22,6 +22,7 @@
       gesture-detector
       id="scene"
     >
+	<audio id="song" src="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/asset/VitalOrgans.mp3"></audio>
 	    
         <a-asset-item
           id="Brain"
@@ -48,6 +49,8 @@
         </a-asset-item>
 		   
 	<a-marker type="pattern" url="https://johnbenedictcastillo.github.io/bscsA/coronacion-sabadera/marker/pattern-body.patt">
+		
+		<a-sound src=#song autoplay="true"> </a-sound>
 		
 		<a-entity
 		  gltf-model="#Lungs"
