@@ -1,1 +1,166 @@
+<!DOCTYPE html>
 
+<html>
+  <head>
+    <title>Welcome to the Zoo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>    
+  </head>
+
+  <body>
+    <a-scene
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <audio id="song" src="./assets/zoo.mp3">
+	   class="clickable"</audio>
+       <audio id="song" src="./assets/zoo.mp3">
+        class="clickable"</audio>
+	    
+      <a-assets>
+        <a-asset-item
+          id="tiger"
+          src="./tiger.glb"
+        >
+        </a-asset-item>
+        
+        <a-asset-item
+          id="hippos"
+          src="./hippos.glb"
+        >
+        </a-asset-item>
+        
+        <a-asset-item 
+        id="elephant" 
+        response-type="arraybuffer" 
+        src="./elephant.glb"
+        >
+        </a-asset-item>
+        
+        <a-asset-item 
+        id="chicken" 
+        response-type="arraybuffer" 
+        src="./chicken.glb"
+        >
+        </a-asset-item>
+
+        <a-asset-item 
+        id="eagle" 
+        src="./eagle.glb"
+        >
+        </a-asset-item>
+
+        <a-asset-item 
+        id="trees" 
+        src="./trees.glb"
+        >
+        </a-asset-item>
+
+
+        <a-asset-item 
+        id="horse" 
+        src="./horse.glb"
+        >
+        </a-asset-item>
+
+
+
+      </a-assets>
+      
+      <a-marker
+        type="pattern"
+        url="https://ronnelbillones.github.io/Trial/marker/pattern-zoo.patt"
+      >
+    
+    <a-entity id="entity" look-at="[camera]">
+      <a-entity
+          gltf-model="#hippos" 
+          scale="0.005 0.005 0.005" 
+          position = "0.2 0 0.7" 
+	animation-mixer = "clip:Take 001"
+	  class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+
+	<a-entity
+          gltf-model="#elephant" 
+          scale="0.007 0.007 0.007" 
+          position = "0.7 0 0.7" 
+	  animation-mixer = "clip:CINEMA_4D_Principal"
+	  class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+	
+	<a-entity
+          gltf-model="#chicken" 
+          scale="0.5 0.5 0.5" 
+          position = "-0.4 0 0.9" 
+	  animation-mixer = "clip:Idle"
+	class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+
+        <a-entity
+        gltf-model="#eagle" 
+          scale="0.007 0.007 0.007" 
+        position = "0.3 1 0.7" 
+ 	 animation-mixer = "clip:CINEMA_4D_Principal"
+	class="clickable"
+          gesture-handler
+      >
+      </a-entity>
+
+      <a-entity
+      gltf-model="#trees" 
+      scale="1 1 1" 
+      position="-0.2 0 0.8" 
+  animation-mixer = "clip:Take 001"
+class="clickable"
+        gesture-handler
+    >
+    </a-entity>
+
+
+
+  <a-entity
+  gltf-model="#horse" 
+  scale="0.2 0.2 0.2" 
+  position = "-0.4 0 0.7" 
+animation-mixer = "clip:idel_testnyi"
+class="clickable"
+    gesture-handler
+>
+</a-entity>
+
+	    
+        <a-entity
+          id="tigers"
+          gltf-model="#tiger"
+          position="0.6 0 0.1" 
+          scale="0.025 0.025 0.025" 
+	animation-mixer = "clip:Take 001"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+	<a-sound src=#song autoplay="true"> </a-sound>
+	</a-entity>
+      </a-marker>
+      
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
