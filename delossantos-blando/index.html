@@ -5,33 +5,37 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-       <a-marker dodecahedron type='pattern' url="marker/pattern-one.patt">
-              <a-dodecahedron 
-                position="0 0 0" 
-                scale="1 1 1"
-                radius="1.25" 
-                rotation="10 43 45"
-                color="#0180e1">
-                </a-dodecahedron>
-      </a-marker>
-      <a-marker octahedron type='pattern' url="marker/pattern-two.patt">
-              <a-octahedron
+       
+        </a-marker>
+        <a-marker dodecahedron type='pattern' url="marker/pattern-one.patt">
+              <a-dodecahedron
                 position="0 0 0" 
                 scale="0.5 1.5 0.5"
                 radius="1.25" 
-                rotation="10 43 45"
                 color="#14a115">
-                </a-octahedron>
-      </a-marker>
-      <a-marker cone type='pattern' url="marker/pattern-three.patt">
-              <a-cone 
-                position="0 0 0"
-                scale="1 1 1"        
-                radius="1.25"
-                rotation="10 43 45"
-                color="#f90101">
-                </a-cone>
-      </a-marker>
+              <a-animation attribute="rotation"
+                  dur="3000"
+                  to="360 360 0"
+                  repeat="indefitine"
+                  easing="linear"
+               <a-animation>
+           </a-dodecahedron>
+        </a-marker>
+     <a-marker cone type='pattern' url="marker/pattern-two.patt">
+              <a-cone
+                position="5 5 0" 
+                scale="0.5 1.5 0.5"
+                radius="1.25" 
+                color="#14a115">
+              <a-animation attribute="rotation"
+                  dur="3000"
+                  to="360 360 0"
+                  repeat="indefitine"
+                  easing="linear"
+               <a-animation>
+           </a-cone>
+        </a-marker>
+      
       <a-entity camera></a-entity>
     </a-scene>
   </body>
