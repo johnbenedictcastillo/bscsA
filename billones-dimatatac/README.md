@@ -13,4 +13,5 @@ C.	Technical Specification
 
 D.	Risk Analysis
 •	This project will only show 6 different animals
+
 •	Not exactly the animal in WebAR can be seen in the zoo. The animal 3d images seen on WebAr are just an attraction for more customers.
