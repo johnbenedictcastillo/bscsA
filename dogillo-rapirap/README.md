@@ -16,7 +16,11 @@
   
 **Risk Analysis:**
 	
->The basic problems that we might encounter are no internet access or poor internet connection, failed to scan the photo due to the camera itself of the user.
+>For lacking visible information for the rooms in LSPU Siniloan campus, we have gathered some possible solutions:
+1.	Flyer
+2.	Pamphlet 
+3.	Sticker
+4.	Room inspector (our system)
 
 **Describe the possible solutions:**
 
