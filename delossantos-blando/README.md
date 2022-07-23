@@ -1,4 +1,4 @@
-# Title 1: 3D Shape Book Leaning: An Augmented Reality using AR.js
+# Title 1: 3D Shape Book Learning: An Augmented Reality using AR.js
 
 - Project Description.
 
